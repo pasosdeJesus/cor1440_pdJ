@@ -457,7 +457,8 @@ CREATE TABLE cor1440_gen_actividadtipo (
     fechacreacion date NOT NULL,
     fechadeshabilitacion date,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    porcentaje numeric
 );
 
 
@@ -2997,6 +2998,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20171011213405'),
 ('20171011213548'),
 ('20171019133203'),
-('20171128234148');
+('20171128234148'),
+('20171205142729');
 
 

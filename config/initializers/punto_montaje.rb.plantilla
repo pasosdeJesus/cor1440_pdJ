@@ -1,2 +1,2 @@
-Cor1440::Application.config.relative_url_root = '/'
-Cor1440::Application.config.assets.prefix = '/assets'
+Cor1440pdJ::Application.config.relative_url_root = '/'
+Cor1440pdJ::Application.config.assets.prefix = '/assets'

@@ -1,0 +1,12 @@
+<%= f.input :busresponsable,
+  collection: ::Usuario.where('fechadeshabilitacion IS NULL'),
+  include_blank: true,
+  label_method: :presenta_nombre,
+  value_method: :id,
+  label: false,
+  selected: Sip::ModeloHelper.poromision(params, :busresponsable),
+  input_html: {
+    class: 'chosen-select',
+    'data-enviarautomatico' => ''
+  }
+%>

@@ -43,4 +43,4 @@ config/application.rb
 config/initializers/punto_montaje.rb
 config/routes.rb
 config/unicorn.conf.minimal.rb    
-public/heb412/
+public/cor1440pdJ/

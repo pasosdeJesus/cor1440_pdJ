@@ -5,41 +5,25 @@ require_dependency 'cor1440_gen/concerns/controllers/actividades_controller'
 module Cor1440Gen
     class ActividadesController < Sip::ModelosController
 
+      include Cor1440Gen::Concerns::Controllers::ActividadesController
+
       before_action :set_actividad, 
         only: [:show, :edit, :update, :destroy]
       load_and_authorize_resource class: Cor1440Gen::Actividad
 
-      def clase
-        "Cor1440Gen::Actividad"
-      end
-
       def atributos_index
-        [ :id, :fecha_localizada, :responsable,
-          :nombre, :actividadtipos, 
+        [ :id, 
+          :fecha_localizada, 
+          :responsable,
+          :nombre, 
+          :actividadtipos, 
           :proyectosfinancieros,
-          :tiempo, :observaciones,
+          :actividadpf,
+          :observaciones,
           :valor
         ]
       end
 
-      def atributos_form
-        atributos_index - [:id, :valor]
-      end
-
-      def gencalse
-        return 'F'
-      end
-
-      def show
-        authorize! :read, clase.constantize
-        @registro = clase.constantize.find(params[:id])
-        render 'sip/modelos/show', layout: 'application'
-      end
-
-      def index(c = nil)
-        super(c)
-        #render 'sip/modelos/index', layout: 'application'
-      end
 
       private
 
@@ -55,7 +39,6 @@ module Cor1440Gen
         params.require(:actividad).permit(
           :oficina_id, :nombre, 
           :objetivo, :proyecto, :resultado,
-          :tiempo,
           :fecha_localizada, :actividad, :observaciones, 
           :usuario_id,
           :lugar,
@@ -75,7 +58,11 @@ module Cor1440Gen
             :sip_anexo_attributes => [
               :id, :descripcion, :adjunto, :_destroy
             ]
+          ],
+          :valorcampoact_attributes => [
+            :valor, :campoact_id, :id
           ]
+ 
         )
       end
 

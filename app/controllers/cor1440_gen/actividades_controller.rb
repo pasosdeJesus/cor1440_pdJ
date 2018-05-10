@@ -16,11 +16,25 @@ module Cor1440Gen
           :fecha_localizada, 
           :responsable,
           :nombre, 
-          :actividadtipos, 
           :proyectosfinancieros,
           :actividadpf,
-          :observaciones,
-          :valor
+          :observaciones
+        ]
+      end
+
+      def atributos_show
+        atributos_index
+      end
+
+      def atributos_form
+        [ :id, 
+          :fecha_localizada, 
+          :responsable,
+          :nombre, 
+          :proyectosfinancieros,
+          :actividadpf,
+          :valorcampoact,
+          :observaciones
         ]
       end
 

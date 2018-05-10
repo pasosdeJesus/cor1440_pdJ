@@ -18,6 +18,7 @@ module Cor1440Gen
           :nombre, 
           :proyectosfinancieros,
           :actividadpf,
+          :valorcampoact,
           :observaciones
         ]
       end

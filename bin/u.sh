@@ -22,7 +22,7 @@ if (test "$DOAS" = "") then {
 	DOAS=sudo
 } fi;
 bd=`basename ${DIRAP}`
-$DOAS su ${USUARIO_AP} -c "cd ${DIRAP}; RAILS_RELATIVE_URL_ROOT=${RAILS_RELATIVE_URL_ROOT} rake assets:precompile; echo \"Iniciando unicorn...\"; SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../${bd}/config/unicorn.conf.minimal.rb  -E production -D"
+$DOAS su ${USUARIO_AP} -c "cd ${DIRAP}; RAILS_RELATIVE_URL_ROOT=${RAILS_RELATIVE_URL_ROOT} bundle exec rake assets:precompile; echo \"Iniciando unicorn...\"; SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../${bd}/config/unicorn.conf.minimal.rb  -E production -D"
 
 
   

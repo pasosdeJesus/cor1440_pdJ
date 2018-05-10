@@ -49,6 +49,9 @@ module Cor1440Gen
       atributos_form
     end
 
+    def index_reordenar(c)
+      c.reorder('fechacierre desc')
+    end
 
     def new
       @registro = clase.constantize.new

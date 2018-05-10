@@ -39,6 +39,10 @@ module Cor1440Gen
       end
 
 
+      def index_reordenar(c)
+        c.reorder('fecha desc')
+      end
+
       private
 
 

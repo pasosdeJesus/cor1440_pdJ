@@ -89,7 +89,8 @@ gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
 #gem 'heb412_gen', path: '../heb412_gen/'
 
 # Motor Cor1440_gen
-gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git", branch: 'vista_actividad_sipmodelo'
+gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git",
+  branch: 'vista_actividad_sipmodelo'
 #gem "cor1440_gen", path: '../cor1440_gen'
 
 gem 'chosen-rails'
@@ -113,7 +114,7 @@ group :test do
   # Acelera ejecutando en fondo.  https://github.com/jonleighton/spring
   gem "spring"
 
-  gem 'rails-controller-testing'
+  #gem 'rails-controller-testing'
 
   # https://www.relishapp.com/womply/rails-style-guide/docs/developing-rails-applications/bundler
   # Lanza programas para examinar resultados
@@ -121,10 +122,10 @@ group :test do
 
   gem "connection_pool"
   gem "minitest-reporters"
-  gem "mocha"
+  #gem "mocha"
+  gem "minitest-rails-capybara"
+  #gem "capybara"
   gem "poltergeist"
-  gem 'capybara'
-  gem 'minitest-rails-capybara'
 
   gem 'simplecov'
 

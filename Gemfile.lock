@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 1c371aa4821fa40e25d61db96c29e2aa6b1fde80
+  revision: e0f87a8a61496d8f2d695cc15fdbaa9c3f19f3d8
   specs:
     cor1440_gen (1.0b2)
       devise
@@ -169,7 +169,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.6.2)
+    devise-i18n (1.6.3)
       devise (>= 4.4)
     docile (1.3.1)
     erubi (1.7.1)

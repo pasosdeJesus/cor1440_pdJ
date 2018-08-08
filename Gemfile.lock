@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: e1deae92ec15dcf975ec77f87dffc594d803e7c1
+  revision: 418867c3d89a53324ec22b4ea8df7d71e41abb5a
   specs:
     cor1440_gen (1.0b2)
       devise
@@ -179,7 +179,7 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (1.0.1)
+    i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     interception (0.5)
     jbuilder (2.7.0)
@@ -305,7 +305,7 @@ GEM
     rspreadsheet (0.4.5)
       andand (~> 1.3)
       rubyzip (~> 1.1)
-    ruby-progressbar (1.9.0)
+    ruby-progressbar (1.10.0)
     rubyzip (1.2.1)
     sass (3.5.7)
       sass-listen (~> 4.0.0)

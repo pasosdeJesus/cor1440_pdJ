@@ -8,6 +8,9 @@ es:
     proyectofinanciero: Convenio Financiero
   activerecord:
     attributes:
+      "cor1440_gen/actividad":
+        duracion: Duración
+        medduracion: Unidad de duración
       "cor1440_gen/actividadarea":
         Actividadarea: Área de Actividad
         Actividadareas: Áreas de Actividad

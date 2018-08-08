@@ -195,7 +195,9 @@ CREATE TABLE public.cor1440_gen_actividad (
     rangoedadac_id integer,
     usuario_id integer,
     lugar character varying(500),
-    tiempo numeric(20,2)
+    tiempo numeric(20,2),
+    duracion numeric,
+    medduracion character(1)
 );
 
 
@@ -3552,6 +3554,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180612024009'),
 ('20180612030340'),
 ('20180626123640'),
-('20180627031905');
+('20180627031905'),
+('20180808123000');
 
 

@@ -19,11 +19,11 @@ if (test "$?" = "0") then {
 	echo "Gemfile incluye debugger que heroku no quiere"
 	exit 1;
 } fi;
-#grep "^ *gem *.byebug*" Gemfile > /dev/null 2> /dev/null
-#if (test "$?" = "0") then {
-#	echo "Gemfile incluye byebug que rbx de travis-ci no quiere"
-#	exit 1;
-#} fi;
+grep "^ *gem *.byebug*" Gemfile > /dev/null 2> /dev/null
+if (test "$?" = "0") then {
+	echo "Gemfile incluye byebug que rbx de travis-ci no quiere"
+	exit 1;
+} fi;
 
 if (test "$SINAC" != "1") then {
   NOKOGIRI_USE_SYSTEM_LIBRARIES=1 MAKE=gmake make=gmake QMAKE=qmake4 bundle update

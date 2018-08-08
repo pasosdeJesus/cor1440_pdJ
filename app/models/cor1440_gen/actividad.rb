@@ -8,15 +8,32 @@ module Cor1440Gen
     include Sip::Localizacion
 
     attr_accessor :valor
+    attr_accessor :horas
+
+    def horas
+        case medduracion
+        when 'I'
+          duracion/60.0
+        when 'H'
+          duracion
+        when 'D'
+          duracion*8
+        when 'M'
+          duracion*8*25
+        else
+          0
+        end
+    end
 
     def valor
-      if actividadtipo.count == 1 && proyectofinanciero.count == 1 &&
-        actividadtipo[0].porcentaje && proyectofinanciero[0].valorhora
-        # Más bien suma de conbinaciones porcentaje por tipo*proyecto de 
-        # las validas proyecto,tipo --cuando se implemente en actividad de 
-        # convenio --que deberí poderse configurar fácil y rápido tal vez
-        # con plantilla de actividad de convenio (?) o con lo de indicadores?
-        actividadtipo[0].porcentaje*proyectofinanciero[0].valorhora
+      if duracion && duracion > 0 && medduracion &&
+        proyectofinanciero.count == 1 && proyectofinanciero[0].valorhora &&
+        actividadpf.count == 1 &&
+        actividadpf[0].actividadtipo &&
+        actividadpf[0].actividadtipo.porcentaje > 0 
+        
+        horas * (actividadpf[0].actividadtipo.porcentaje/100.0) * 
+          proyectofinanciero[0].valorhora
       else
         0
       end
@@ -26,6 +43,16 @@ module Cor1440Gen
       greater_than: 0,
       allow_nil: true 
     }
+
+    def presenta(atr)
+      case atr.to_s
+      when 'medduracion'
+        Sip::ModeloHelper.etiqueta_coleccion(
+          ::ApplicationHelper::DURACION, medduracion)
+      else
+        presenta_gen(atr)
+      end
+    end
 
     scope :filtro_fecha_localizadaini, lambda { |f|
       where('fecha >= ?', Sip::FormatoFechaHelper.fecha_local_estandar(f))

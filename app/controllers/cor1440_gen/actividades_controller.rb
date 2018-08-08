@@ -14,12 +14,15 @@ module Cor1440Gen
       def atributos_index
         [ :id, 
           :fecha_localizada, 
+          :duracion,
+          :medduracion,
           :responsable,
           :nombre, 
           :proyectosfinancieros,
           :actividadpf,
           :valorcampoact,
-          :observaciones
+          :observaciones,
+          :valor
         ]
       end
 
@@ -28,15 +31,7 @@ module Cor1440Gen
       end
 
       def atributos_form
-        [ :id, 
-          :fecha_localizada, 
-          :responsable,
-          :nombre, 
-          :proyectosfinancieros,
-          :actividadpf,
-          :valorcampoact,
-          :observaciones
-        ]
+        atributos_index - [:id, :valor]
       end
 
 
@@ -55,34 +50,36 @@ module Cor1440Gen
 
       # No confiar parametros a Internet, sólo permitir lista blanca
       def actividad_params
-        params.require(:actividad).permit(
-          :oficina_id, :nombre, 
-          :objetivo, :proyecto, :resultado,
-          :fecha_localizada, :actividad, :observaciones, 
-          :usuario_id,
-          :lugar,
-          :actividadarea_ids => [],
-          :actividadpf_ids => [],
-          :actividadtipo_ids => [],
-          :proyecto_ids => [],
-          :proyectofinanciero_ids => [],
-          :usuario_ids => [],
-          :actividad_rangoedadac_attributes => [
-            :id, :rangoedadac_id, :fl, :fr, :ml, :mr, :_destroy
-          ],
-          :actividad_sip_anexo_attributes => [
-            :id,
-            :id_actividad, 
-            :_destroy,
-            :sip_anexo_attributes => [
-              :id, :descripcion, :adjunto, :_destroy
+        p = atributos_form - 
+          [:actividadpf, :proyectosfinancieros, :valorcampoact] + [
+            :actividadpf_ids => [],
+            :proyectofinanciero_ids => [],
+            :valorcampoact_attributes => [
+              :valor, :campoact_id, :id
             ]
-          ],
-          :valorcampoact_attributes => [
-            :valor, :campoact_id, :id
-          ]
- 
-        )
+        ]
+        params.require(:actividad).permit(p)
+#          :nombre, 
+#          :objetivo, :proyecto, :resultado,
+#          
+#          :fecha_localizada, :actividad, :observaciones, 
+#          :usuario_id,
+#          :lugar,
+#          :actividadtipo_ids => [],
+#          :proyecto_ids => [],
+#          :usuario_ids => [],
+#          :actividad_rangoedadac_attributes => [
+#            :id, :rangoedadac_id, :fl, :fr, :ml, :mr, :_destroy
+#          ],
+#          :actividad_sip_anexo_attributes => [
+#            :id,
+#            :id_actividad, 
+#            :_destroy,
+#            :sip_anexo_attributes => [
+#              :id, :descripcion, :adjunto, :_destroy
+#            ]
+#          ],
+        #)
       end
 
   end

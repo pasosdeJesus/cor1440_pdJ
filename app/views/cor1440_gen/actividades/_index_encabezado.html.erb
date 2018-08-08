@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-3">
+      <% ng = (!genclase.nil? && genclase == 'F') ? 'Nueva' : 'Nuevo' %>
+      <% if @registros.size > 5 && can?(:new, clase.constantize)%>
+        <%= link_to t('.new', default: [ng, t("helpers.links.new")]),
+          new_modelo_path(@registros), class: 'btn btn-primary' 
+        %>
+    <% end %>
+  </div>
+  <div class="col-sm-offset-3 col-sm-3">
+    <%= titulo %>: <span id="numregistros"><%= @registros.count %></span>
+  </div>
+  <div class="col-sm-offset-0 col-sm-3">
+    <% @horas = @registros.inject(0) { |memo,r| memo + r.horas } %>
+    <% @valor = @registros.inject(0) { |memo,r| memo + r.valor } %>
+    Horas: <%= @horas %>
+    Valor: <%= @valor %>
+  </div>
+
+</div> <!-- row -->
+

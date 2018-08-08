@@ -11,11 +11,9 @@
     <%= titulo %>: <span id="numregistros"><%= @registros.count %></span>
   </div>
   <div class="col-sm-offset-0 col-sm-3">
-    <% @horas = @registros.inject(0) { |memo,r| memo + r.horas } %>
     Horas: <%= @horas %>
   </div>
   <div class="col-sm-offset-0 col-sm-3">
-    <% @valor = @registros.inject(0) { |memo,r| memo + r.valor } %>
     Valor: <%= @valor %>
   </div>
 </div> <!-- row -->

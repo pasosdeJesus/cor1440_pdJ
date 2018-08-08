@@ -25,7 +25,7 @@ module Cor1440Gen
       ] +
       [ 
         "monto_localizado",
-        "valrohora_localizado",
+        "valorhora_localizado",
       ] 
     end
 
@@ -36,7 +36,8 @@ module Cor1440Gen
       [ :fechainicio_localizada,
         :fechacierre_localizada,
       ] +
-      [ :monto,
+      [ :monto_localizado,
+        :valorhora_localizado,
         :observaciones,
         :objetivopf,
         :resultadopf,

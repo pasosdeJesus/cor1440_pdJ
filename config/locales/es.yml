@@ -17,6 +17,8 @@ es:
       "cor1440_gen/proyectofinanciero":
         Proyectofinanciero: Convenio Financiero
         Proyectosfinancieros: Convenios Financieros
+        monto: Valor total
+        valorhora: Valor por hora
       "cor1440_gen/informe":
         filtroproyecto: Financiable
         filtroactividadarea: Área 

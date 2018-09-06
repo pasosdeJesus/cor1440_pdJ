@@ -39,10 +39,10 @@ module Cor1440Gen
       end
     end
 
-    validates :tiempo, numericality: { 
-      greater_than: 0,
-      allow_nil: true 
-    }
+    #validates :tiempo, numericality: { 
+    #  greater_than: 0,
+    #  allow_nil: true 
+    #}
 
     def presenta(atr)
       case atr.to_s

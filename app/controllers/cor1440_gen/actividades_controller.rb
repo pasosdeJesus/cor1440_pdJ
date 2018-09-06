@@ -36,8 +36,12 @@ module Cor1440Gen
 
 
       def index_reordenar(c)
-        @horas = c.inject(0) { |memo,r| memo + r.horas } 
-        @valor = c.inject(0) { |memo,r| memo + r.valor } 
+        @horas = c.inject(0) { |memo,r| 
+          r.horas ? memo + r.horas : memo 
+        } 
+        @valor = c.inject(0) { |memo,r| 
+          r.valor ? memo + r.valor : memo
+        } 
         c.reorder('fecha desc')
       end
 

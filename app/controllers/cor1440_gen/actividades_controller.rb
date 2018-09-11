@@ -54,17 +54,21 @@ module Cor1440Gen
         )
       end
 
-      # No confiar parametros a Internet, sólo permitir lista blanca
-      def actividad_params
-        p = atributos_form - 
+      def lista_params
+        atributos_form - 
           [:actividadpf, :proyectosfinancieros, :valorcampoact] + [
+            :usuario_id,
             :actividadpf_ids => [],
             :proyectofinanciero_ids => [],
             :valorcampoact_attributes => [
               :valor, :campoact_id, :id
             ]
         ]
-        params.require(:actividad).permit(p)
+      end
+
+      # No confiar parametros a Internet, sólo permitir lista blanca
+      def actividad_params
+        params.require(:actividad).permit(lista_params)
 #          :nombre, 
 #          :objetivo, :proyecto, :resultado,
 #          

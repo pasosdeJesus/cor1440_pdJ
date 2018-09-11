@@ -18,7 +18,7 @@ module Cor1440Gen
           :medduracion,
           :responsable,
           :nombre, 
-          :proyectosfinancieros,
+          :proyectofinanciero,
           :actividadpf,
           :valorcampoact,
           :observaciones,

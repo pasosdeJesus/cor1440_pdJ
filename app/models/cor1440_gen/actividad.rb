@@ -49,6 +49,8 @@ module Cor1440Gen
       when 'medduracion'
         Sip::ModeloHelper.etiqueta_coleccion(
           ::ApplicationHelper::DURACION, medduracion)
+      when 'responsable'
+        responsable ? responsable.presenta_nombre  : '-'
       else
         presenta_gen(atr)
       end

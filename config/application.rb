@@ -24,8 +24,10 @@ module Cor1440pdJ
 
     config.active_record.schema_format = :sql
     
-config.railties_order = [:main_app, Sip::Engine, :all]
+    #config.railties_order = [:main_app, Sip::Engine, :all]
+    
+    config.x.heb412_ruta = Rails.root.join('public', 'heb412')
 
-    #config.relative_url_root = "/cor1440pdJ"
+    config.relative_url_root = "/cor1440pdJ"
   end
 end

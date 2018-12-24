@@ -39,10 +39,8 @@ module Cor1440Gen
       [ :monto_localizado,
         :valorhora_localizado,
         :observaciones,
-        :objetivopf,
-        :resultadopf,
-        :indicadorpf,
-        :actividadpf,
+        :marcologico,
+        :anexo_proyectofinanciero
       ] 
     end
 

@@ -30,8 +30,7 @@ module Cor1440Gen
     end
 
     def atributos_form
-      [ :id, 
-        :nombre ] +
+      [ :nombre ] +
       [ :financiador_ids =>  [] ] +
       [ :fechainicio_localizada,
         :fechacierre_localizada,
@@ -39,13 +38,17 @@ module Cor1440Gen
       [ :monto_localizado,
         :valorhora_localizado,
         :observaciones,
-        :marcologico,
+        :objetivopf,
+        :indicadorobjetivo,
+        :resultadopf,
+        :indicadorpf,
+        :actividadpf,
         :anexo_proyectofinanciero
       ] 
     end
 
     def atributos_show
-      atributos_form
+      [:id] + atributos_form
     end
 
     def index_reordenar(c)
@@ -69,30 +72,13 @@ module Cor1440Gen
       #@proyectofinanciero.current_usuario = current_usuario
     end
 
+
     # No confiar parametros a Internet, sólo permitir lista blanca
     def proyectofinanciero_params
       params.require(:proyectofinanciero).permit(
-        *atributos_form - [:objetivopf, :resultadopf, 
-                           :indicadorpf, :actividadpf] +
-                           [ :objetivopf_attributes =>  [
-                             :id, :numero, :objetivo, :_destroy ] 
-                           ] +
-                           [ :resultadopf_attributes =>  [
-                             :id, :objetivopf_id,
-                             :numero, :resultado, :_destroy ] 
-                           ] +
-                           [ :indicadorpf_attributes =>  [
-                             :id, :resultadopf_id,
-                             :numero, :indicador, :tipoindicador_id,
-                             :_destroy ] 
-                           ] +
-                           [ :actividadpf_attributes =>  [
-                             :id, :resultadopf_id,
-                             :actividadtipo_id,
-                             :nombrecorto, :titulo, 
-                             :descripcion, :_destroy ] 
-                           ] 
-
+        proyectofinanciero_params_cor1440_gen + [
+          :valorhora_localizado
+        ]
       )
     end
 

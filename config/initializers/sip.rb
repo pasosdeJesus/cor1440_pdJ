@@ -7,5 +7,5 @@ Sip.setup do |config|
       if ENV["HEROKU_POSTGRESQL_MAUVE_URL"]
         config.ruta_anexos = "#{Rails.root}/tmp/"
       end
-      config.titulo = "Cor1440pdJ " + Cor1440Gen::VERSION
+      config.titulo = "Cor1440 pdJ " + Cor1440Gen::VERSION
 end

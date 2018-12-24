@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby '~>2.4'
 
+gem 'bigdecimal', '1.3.5'
+
 # Rails (internacionalización)
 gem "rails", '~> 5.2.1'
 

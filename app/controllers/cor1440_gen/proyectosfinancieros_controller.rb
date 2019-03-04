@@ -43,6 +43,8 @@ module Cor1440Gen
         :resultadopf,
         :indicadorpf,
         :actividadpf,
+        :caracterizacion,
+        :beneficiario,
         :anexo_proyectofinanciero
       ] 
     end

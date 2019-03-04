@@ -4,10 +4,17 @@
 
 <% content_for :menu do %>
   <%= menu_group do %>
-    <% if !current_usuario.nil? %>
+    <% if can? :read, Cor1440Gen::Actividad %>
       <%= menu_item "Actividades", cor1440_gen.actividades_path %>
+    <% end %>
+    <% if can? :read, Cor1440Gen::Proyectofinanciero %>
       <%= menu_item "Convenios", cor1440_gen.proyectosfinancieros_path %>
+    <% end %>
+    <% if can? :read, Cor1440Gen::Informe %>
       <%= menu_item "Informes", cor1440_gen.informes_path %>
+    <% end %>
+    <% if can? :read, Sip::Persona %>
+      <%= menu_item "Persona", sip.personas_path %>
     <% end %>
   <% end %>
   <%= menu_group :pull => :right do %>
@@ -24,6 +31,9 @@
         <%= menu_item "Clave", main_app.editar_registro_usuario_path %>
         <% if current_usuario.rol == Ability::ROLADMIN %>
           <%= menu_item "Usuarios", main_app.usuarios_path %>
+        <% end %>
+        <% if can? :manage, Mr519Gen::Formulario %>
+          <%= menu_item "Formularios", mr519_gen.formularios_path %>
         <% end %>
         <% if current_usuario.rol == Ability::ROLADMIN %>
           <%= menu_item "Tablas Básicas", sip.tablasbasicas_path %>

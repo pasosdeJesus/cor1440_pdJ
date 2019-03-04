@@ -37,7 +37,13 @@ class Ability  < Cor1440Gen::Ability
         can :manage, Cor1440Gen::Actividad
         can :manage, Cor1440Gen::Informe
         can :manage, Cor1440Gen::Proyectofinanciero
+
         can :manage, Heb412Gen::Doc 
+        
+        can :manage, Mr519Gen::Formulario
+        
+        can :manage, Sip::Persona
+
         can :manage, Usuario
         can :manage, :tablasbasicas
         tablasbasicas.each do |t|

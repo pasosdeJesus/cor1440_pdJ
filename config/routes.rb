@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   end
   mount Sip::Engine, at: '/cor1440pdJ', as: 'sip'
   mount Heb412Gen::Engine, at: "/cor1440pdJ", as: "heb412_gen"
+  mount Mr519Gen::Engine, at: "/cor1440pdJ", as: "mr519_gen"
   mount Cor1440Gen::Engine, at: "/cor1440pdJ", as: 'cor1440_gen'
 end

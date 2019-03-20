@@ -50,7 +50,14 @@ module Cor1440Gen
     end
 
     def atributos_show
-      [:id] + atributos_form
+      [:id] + atributos_form -
+        [
+          :indicadorobjetivo,
+          :resultadopf,
+          :indicadorpf,
+          :actividadpf
+      ] + [ :marcologico ]
+
     end
 
     def index_reordenar(c)

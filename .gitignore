@@ -44,3 +44,10 @@ config/initializers/punto_montaje.rb
 config/routes.rb
 config/unicorn.conf.minimal.rb    
 public/cor1440pdJ/
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

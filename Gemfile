@@ -5,7 +5,7 @@ ruby '~>2.4'
 gem 'bigdecimal'
 
 # Rails (internacionalización)
-gem "rails", '~> 5.2.1'
+gem "rails", '~> 6.0.0.rc1'
 
 gem 'bootsnap', '>=1.1.0', require: false
 
@@ -21,6 +21,8 @@ gem 'puma'
 
 # CSS
 gem "sass"
+
+gem 'webpacker'
 
 # Color en terminal
 gem "colorize"
@@ -81,22 +83,23 @@ gem "paperclip"
 gem "tzinfo"
 
 # Motor de SIVeL 2
-gem 'sip', git: "https://github.com/pasosdeJesus/sip.git"
+gem 'sip', git: "https://github.com/pasosdeJesus/sip.git", branch: :rails6
 #gem 'sip', path: '../sip'
 
 # Motor heb412_gen para manejar archivos como nube y plantillas
-gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git'
+gem 'heb412_gen', git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :rails6
 #gem 'heb412_gen', path: '../heb412_gen/'
 
 # Motor de formularios
-gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git'
+gem 'mr519_gen', git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: :rails6
 #gem 'mr519_gen', path: '../mr519_gen/'
 
 # Motor Cor1440_gen
-gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git"
+gem 'cor1440_gen', git: "https://github.com/pasosdeJesus/cor1440_gen.git", branch: :rails6
 #gem "cor1440_gen", path: '../cor1440_gen'
 
-gem 'chosen-rails'
+gem 'chosen-rails', git: 'https://github.com/vtamara/chosen-rails.git', branch: 'several-fixes'
+
 gem 'rspreadsheet'
 gem 'libxml-ruby'
 
@@ -123,11 +126,6 @@ group :test do
   # Lanza programas para examinar resultados
   gem "launchy"
 
-  gem "connection_pool"
-  gem "minitest-reporters"
-  #gem "mocha"
-  gem "minitest-rails-capybara"
-  #gem "capybara"
   gem "poltergeist"
 
   gem 'simplecov'

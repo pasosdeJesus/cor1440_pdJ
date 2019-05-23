@@ -28,6 +28,6 @@ module Cor1440pdJ
     
     config.x.heb412_ruta = Rails.root.join('public', 'heb412')
 
-    config.relative_url_root = "/cor1440pdJ"
+    #config.relative_url_root = "/cor1440pdJ"
   end
 end

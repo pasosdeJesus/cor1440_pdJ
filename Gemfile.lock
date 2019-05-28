@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 78868e6d0a23ad0d406fe7a78643b00dad20bad4
+  revision: db70eed188055067f4b9ca1c22de06a7fd99ba59
   specs:
     cor1440_gen (1.0b3)
       devise
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 90078a77ccf48aea25e107fd5494297f975150fb
+  revision: 39780368a89c42ee4a153211bcd68f830d0ac05f
   specs:
     heb412_gen (1.0.b6)
       chosen-rails
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: fb324c0392f4ef2e57416a62785ca452a57236d8
+  revision: 32779aac68e4969dfa21955f8a23bf0ee58a5892
   specs:
     mr519_gen (0.2.0)
       rails (~> 6.0.0.rc1, >= 6.0.0.rc1)
@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: d8f54c204a323923c6b9a7bd636db93362f93f11
+  revision: a5f25a7441d45b2df62d4c28d2c99e6c9107abaf
   specs:
     sip (2.0.b6)
       bootstrap-datepicker-rails
@@ -375,7 +375,7 @@ GEM
       activemodel (>= 6.0.0.a)
       bindex (>= 0.4.0)
       railties (>= 6.0.0.a)
-    webpacker (4.0.3)
+    webpacker (4.0.4)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)

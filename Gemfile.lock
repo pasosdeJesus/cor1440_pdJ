@@ -1,9 +1,8 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: 0e85ad555724bb11334f0c427ac59150fe653380
-  branch: rails6
+  revision: 78868e6d0a23ad0d406fe7a78643b00dad20bad4
   specs:
-    cor1440_gen (1.0b2)
+    cor1440_gen (1.0b3)
       devise
       heb412_gen
       jquery-rails
@@ -14,10 +13,9 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 50458f1775d4c29c3fd709a3e52fc6dd7fe38222
-  branch: rails6
+  revision: 90078a77ccf48aea25e107fd5494297f975150fb
   specs:
-    heb412_gen (1.0.a1)
+    heb412_gen (1.0.b6)
       chosen-rails
       font-awesome-rails
       redcarpet
@@ -26,19 +24,17 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/mr519_gen.git
-  revision: fa4288db1eb70f60697d048a74101616e4344adb
-  branch: rails6
+  revision: fb324c0392f4ef2e57416a62785ca452a57236d8
   specs:
-    mr519_gen (0.1.0)
+    mr519_gen (0.2.0)
       rails (~> 6.0.0.rc1, >= 6.0.0.rc1)
       sip
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: c0f502a0235fbca573649b5565e0c15b97529e32
-  branch: rails6
+  revision: d8f54c204a323923c6b9a7bd636db93362f93f11
   specs:
-    sip (2.0.b5)
+    sip (2.0.b6)
       bootstrap-datepicker-rails
       cancancan
       chosen-rails
@@ -135,7 +131,6 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     andand (1.3.3)
     bcrypt (3.1.12)
-    bigdecimal (1.4.4)
     bindex (0.7.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
@@ -146,13 +141,13 @@ GEM
     builder (3.2.3)
     camertron-eprun (1.1.1)
     cancancan (3.0.1)
-    capybara (3.20.2)
+    capybara (3.21.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
-      regexp_parser (~> 1.2)
+      regexp_parser (~> 1.5)
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
@@ -262,7 +257,7 @@ GEM
     pry-stack_explorer (0.4.9.3)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
-    public_suffix (3.0.3)
+    public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
     rack-proxy (0.6.5)
@@ -313,7 +308,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    rspreadsheet (0.4.5)
+    rspreadsheet (0.4.8)
       andand (~> 1.3)
       rubyzip (~> 1.1)
     rubyzip (1.2.3)
@@ -380,7 +375,7 @@ GEM
       activemodel (>= 6.0.0.a)
       bindex (>= 0.4.0)
       railties (>= 6.0.0.a)
-    webpacker (4.0.2)
+    webpacker (4.0.3)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
@@ -397,7 +392,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt
-  bigdecimal
   bootsnap (>= 1.1.0)
   bootstrap-datepicker-rails
   cancancan

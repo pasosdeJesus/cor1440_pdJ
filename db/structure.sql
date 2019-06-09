@@ -1469,7 +1469,7 @@ ALTER SEQUENCE public.heb412_gen_plantillahcr_id_seq OWNED BY public.heb412_gen_
 
 CREATE TABLE public.mr519_gen_campo (
     id bigint NOT NULL,
-    nombre character varying(128) NOT NULL,
+    nombre character varying(512) NOT NULL,
     ayudauso character varying(1024),
     tipo integer DEFAULT 1 NOT NULL,
     obligatorio boolean,
@@ -4717,6 +4717,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190418014012'),
 ('20190418123920'),
 ('20190418142712'),
-('20190426125052');
+('20190426125052'),
+('20190605143420');
 
 

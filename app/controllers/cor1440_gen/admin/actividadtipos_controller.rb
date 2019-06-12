@@ -14,11 +14,10 @@ module Cor1440Gen
           "nombre", 
           "observaciones", 
           "porcentaje", 
-          "campoact",
+          "formulario",
           "fechacreacion_localizada", 
           "fechadeshabilitacion_localizada"]
       end
-
 
     end
   end

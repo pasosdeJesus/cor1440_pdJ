@@ -4,17 +4,27 @@
 
 <% content_for :menu do %>
   <%= menu_group do %>
-    <% if can? :read, Cor1440Gen::Actividad %>
-      <%= menu_item "Actividades", cor1440_gen.actividades_path %>
+    <%= drop_down "Actividades" do %>
+      <% if can? :read, Cor1440Gen::Actividad %>
+        <%= menu_item "Listado", cor1440_gen.actividades_path %>
+      <% end %>
+      <% if can? :read, Cor1440Gen::Informe %>
+        <%= menu_item "Informes", cor1440_gen.informes_path %>
+      <% end %>
+      <% if can? :read, Sip::Persona %>
+        <%= menu_item "Persona", sip.personas_path %>
+      <% end %>
+      <% if can? :read, Sip::Actorsocial%>
+        <%= menu_item "Actores sociales", sip.actoressociales_path %>
+      <% end %>
     <% end %>
     <% if can? :read, Cor1440Gen::Proyectofinanciero %>
       <%= menu_item "Convenios", cor1440_gen.proyectosfinancieros_path %>
     <% end %>
-    <% if can? :read, Cor1440Gen::Informe %>
-      <%= menu_item "Informes", cor1440_gen.informes_path %>
-    <% end %>
-    <% if can? :read, Sip::Persona %>
-      <%= menu_item "Persona", sip.personas_path %>
+    <% if can? :index, Cor1440Gen::Efecto %>
+      <%= drop_down "Indicadores" do %>
+        <%= menu_item "Avance en indicadores de Efecto", cor1440_gen.efectos_path %>
+      <% end %>
     <% end %>
   <% end %>
   <%= menu_group :pull => :right do %>

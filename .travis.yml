@@ -33,7 +33,7 @@ before_install:
         - bundle exec rake sip:indices
 
 script: 
-        - bundle exec rails test:system 
+        - CONFIG_HOSTS=127.0.0.1 bin/rails test:system 
 
 after_script:
         - ./cc-test-reporter after-build -t simplecov --exit-code $TRAVIS_TEST_RESULT

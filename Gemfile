@@ -128,8 +128,8 @@ group :test do
   # Lanza programas para examinar resultados
   gem 'launchy'
 
-  gem 'poltergeist'
-  
+  gem 'capybara'
+
   gem 'selenium-webdriver'
 
   gem 'simplecov'

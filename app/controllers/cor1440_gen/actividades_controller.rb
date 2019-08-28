@@ -20,7 +20,7 @@ module Cor1440Gen
           :nombre, 
           :proyectofinanciero,
           :actividadpf,
-          :valorcampoact,
+          :respuestafor,
           :observaciones,
           :valor
         ]
@@ -56,12 +56,14 @@ module Cor1440Gen
 
       def lista_params
         atributos_form - 
-          [:actividadpf, :proyectosfinancieros, :valorcampoact] + [
+          [:actividadpf, :proyectosfinancieros, :respuestafor] + [
             :usuario_id,
             :actividadpf_ids => [],
             :proyectofinanciero_ids => [],
-            :valorcampoact_attributes => [
-              :valor, :campoact_id, :id
+            :respuestafor_attributes => [
+              :id, "valorcampo_attributes" => [
+                :valor, :campo_id, :id] +
+                [:valor_ids => []]
             ]
         ]
       end

@@ -22,19 +22,9 @@ class Ability  < Cor1440Gen::Ability
         can :new, Cor1440Gen::Actividad
         can [:update, :create, :destroy], Cor1440Gen::Actividad, 
           oficina: { id: usuario.oficina_id}
-      when Ability::ROLCOOR
-        can :manage, Cor1440Gen::Actividad
-        can :manage, Cor1440Gen::Informe
-        can :manage, Cor1440Gen::Proyectofinanciero
-        can [:update, :create, :destroy], Cor1440Gen::Actividad, 
-          oficina: { id: usuario.oficina_id}
-        can :new, Usuario
-        can [:read, :manage], Usuario, oficina: { id: usuario.oficina_id}
-      when Ability::ROLINV
-        cannot :buscar, Sip::Actividad
-        can :read, Sip::Actividad
       when Ability::ROLADMIN, Ability::ROLDIR
         can :manage, Cor1440Gen::Actividad
+        can :manage, Cor1440Gen::Efecto
         can :manage, Cor1440Gen::Informe
         can :manage, Cor1440Gen::Proyectofinanciero
 
@@ -42,6 +32,7 @@ class Ability  < Cor1440Gen::Ability
         
         can :manage, Mr519Gen::Formulario
         
+        can :manage, Sip::Actorsocial
         can :manage, Sip::Persona
 
         can :manage, Usuario

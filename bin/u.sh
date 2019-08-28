@@ -16,13 +16,18 @@ if (test "${RAILS_RELATIVE_URL_ROOT}" = "") then {
 	echo "Definir url relativo en RAILS_RELATIVE_URL_ROOT"
 	exit 1;
 } fi;
+if (test "${CONFIG_HOSTS}" = "") then {
+	echo "Definir máquina en CONFIG_HOSTS"
+	exit 1;
+} fi;
+
 
 DOAS=`which doas`
 if (test "$DOAS" = "") then {
 	DOAS=sudo
 } fi;
 bd=`basename ${DIRAP}`
-$DOAS su ${USUARIO_AP} -c "cd ${DIRAP}; RAILS_RELATIVE_URL_ROOT=${RAILS_RELATIVE_URL_ROOT} bundle exec rake assets:precompile; echo \"Iniciando unicorn...\"; SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../${bd}/config/unicorn.conf.minimal.rb  -E production -D"
+$DOAS su ${USUARIO_AP} -c "cd ${DIRAP}; RAILS_RELATIVE_URL_ROOT=${RAILS_RELATIVE_URL_ROOT} bundle exec rake assets:precompile; echo \"Iniciando unicorn...\"; CONFIG_HOSTS=${CONFIG_HOSTS} SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec unicorn_rails -c ../${bd}/config/unicorn.conf.minimal.rb  -E production -D"
 
 
   

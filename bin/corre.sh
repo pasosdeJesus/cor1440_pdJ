@@ -16,6 +16,9 @@ if (test "$PUERTODES" = "") then {
 if (test "$IPDES" = "") then {
 	IPDES=127.0.0.1
 } fi;
+if (test "$CONFIG_HOSTS" = "") then {
+	CONFIG_HOSTS=127.0.0.1
+} fi;
 if (test "$RAILS_ENV" = "development") then {
 	if (test "$SININD" = "") then {
 		bundle exec rake sip:indices

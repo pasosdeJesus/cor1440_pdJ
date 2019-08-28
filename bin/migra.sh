@@ -25,6 +25,12 @@ if (test "$?" != "0") then {
 	echo "Problema con bundle install"; 
 	exit 1; 
 } fi;
+CXX=c++ yarn install
+if (test "$?" != "0") then { 
+	echo "Problema con yarn install"; 
+	exit 1; 
+} fi;
+
 bin/rails db:migrate RAILS_ENV=${RAILS_ENV}
 if (test "$?" != "0") then { 
 	echo "Problema con db:migrate"; 

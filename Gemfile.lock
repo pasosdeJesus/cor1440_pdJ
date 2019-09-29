@@ -430,9 +430,9 @@ DEPENDENCIES
   rails (~> 6.0.0.rc1)
   rails-i18n
   rails_12factor
-  rspreadsheet
+  rspreadsheet (>= 0.5.1)
   sass
-  selenium-webdriver
+  selenium-webdriver (>= 3.142.4)
   simple_form
   simplecov
   sip!
@@ -452,4 +452,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.0.2
+   1.17.3

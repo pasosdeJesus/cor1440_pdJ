@@ -3,17 +3,17 @@ source 'https://rubygems.org'
 ruby '~>2.4'
 
 
+gem 'bcrypt'
+
 gem 'bootsnap', '>=1.1.0', require: false
 
 gem 'bootstrap-datepicker-rails' # Ambiente de CSS
 
+gem 'cancancan'
+
 gem 'coffee-rails' # CoffeeScript para recuersos .js.coffee y vistas
 
 gem 'colorize' # Color en terminal
-
-gem 'bcrypt'
-
-gem 'cancancan'
 
 gem 'chosen-rails', git: 'https://github.com/vtamara/chosen-rails.git', branch: 'several-fixes'
 

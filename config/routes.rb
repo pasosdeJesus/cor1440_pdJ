@@ -12,7 +12,7 @@ Rails.application.routes.draw do
         :as => 'registro_usuario'            
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
-    root 'cor1440_gen/hogar#index'
+    root 'sip/hogar#index'
   end
   mount Sip::Engine, at: '/cor1440pdJ', as: 'sip'
   mount Heb412Gen::Engine, at: "/cor1440pdJ", as: "heb412_gen"

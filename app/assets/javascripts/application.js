@@ -13,10 +13,9 @@
 //= require sip/motor
 //= require heb412_gen/motor
 //= require cor1440_gen/motor
-//= require chosen-jquery
 //= require_tree .
 
-$(document).on('turbolinks:load ready page:load', function() {
+document.addEventListener('turbolinks:load', function() {
 	var root;
   	root = typeof exports !== "undefined" && exports !== null ? 
 	  exports : window;

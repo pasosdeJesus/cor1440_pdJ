@@ -1,5 +1,4 @@
 module ApplicationHelper
-  include FontAwesome::Rails::IconHelper
 
   DURACION = [
     ['Minutos', :I],

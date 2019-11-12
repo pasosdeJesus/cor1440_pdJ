@@ -3,63 +3,76 @@
 <% end %>
 
 <% content_for :menu do %>
-  <%= menu_group do %>
-    <%= drop_down "Actividades" do %>
+  <%= grupo_menus do %>
+    <%= despliega_abajo "Actividades" do %>
       <% if can? :read, Cor1440Gen::Actividad %>
-        <%= menu_item "Listado", cor1440_gen.actividades_path %>
+        <%= opcion_menu "Listado", cor1440_gen.actividades_path, 
+          desplegable: true %>
       <% end %>
       <% if can? :read, Cor1440Gen::Informe %>
-        <%= menu_item "Informes", cor1440_gen.informes_path %>
+        <%= opcion_menu "Informes", cor1440_gen.informes_path,
+          desplegable: true %>
       <% end %>
       <% if can? :read, Sip::Persona %>
-        <%= menu_item "Persona", sip.personas_path %>
+        <%= opcion_menu "Persona", sip.personas_path,
+          desplegable: true %>
       <% end %>
       <% if can? :read, Sip::Actorsocial%>
-        <%= menu_item "Actores sociales", sip.actoressociales_path %>
+        <%= opcion_menu "Actores sociales", sip.actoressociales_path,
+          desplegable: true %>
       <% end %>
     <% end %>
     <% if can? :read, Cor1440Gen::Proyectofinanciero %>
-      <%= menu_item "Convenios", cor1440_gen.proyectosfinancieros_path %>
+      <%= opcion_menu "Convenios", cor1440_gen.proyectosfinancieros_path %>
     <% end %>
     <% if can? :index, Cor1440Gen::Efecto %>
-      <%= drop_down "Indicadores" do %>
-        <%= menu_item "Avance en indicadores de Efecto", cor1440_gen.efectos_path %>
+      <%= despliega_abajo "Indicadores" do %>
+        <%= opcion_menu "Avance en indicadores de Efecto", 
+          cor1440_gen.efectos_path, desplegable: true %>
       <% end %>
     <% end %>
   <% end %>
-  <%= menu_group :pull => :right do %>
+  <%= grupo_menus :pull => :right do %>
     <% if !current_usuario.nil? %>
-      <%= drop_down "Documentos y plantillas" do %>
-        <%= menu_item "Nube", heb412_gen.sisini_path %>
+      <%= despliega_abajo "Documentos y plantillas" do %>
+        <%= opcion_menu "Nube", heb412_gen.sisini_path,
+          desplegable: true %>
         <% if current_usuario.rol == Ability::ROLADMIN || 
              current_usuario.rol == Ability::ROLDIR %>
-           <%= menu_item "Definir plantilla hoja de calculo m.", 
-             heb412_gen.new_plantillahcm_path %>
+           <%= opcion_menu "Definir plantilla hoja de calculo m.", 
+             heb412_gen.new_plantillahcm_path, desplegable: true %>
         <% end %>
       <% end %>
-      <%= drop_down "Administrar" do %>
-        <%= menu_item "Clave", main_app.editar_registro_usuario_path %>
+      <%= despliega_abajo "Administrar" do %>
+        <%= opcion_menu "Clave", main_app.editar_registro_usuario_path,
+          desplegable: true %>
         <% if current_usuario.rol == Ability::ROLADMIN %>
-          <%= menu_item "Usuarios", main_app.usuarios_path %>
+          <%= opcion_menu "Usuarios", main_app.usuarios_path,
+            desplegable: true %>
         <% end %>
         <% if can? :manage, Mr519Gen::Formulario %>
-          <%= menu_item "Formularios", mr519_gen.formularios_path %>
+          <%= opcion_menu "Formularios", mr519_gen.formularios_path,
+            desplegable: true %>
         <% end %>
         <% if current_usuario.rol == Ability::ROLADMIN %>
-          <%= menu_item "Tablas Básicas", sip.tablasbasicas_path %>
+          <%= opcion_menu "Tablas Básicas", sip.tablasbasicas_path,
+            desplegable: true %>
         <% end %>
       <% end %>
-      <%= menu_item "Salir #{current_usuario.nusuario}", main_app.sign_out_path %>
+      <%= opcion_menu "Salir #{current_usuario.nusuario}", 
+        main_app.sign_out_path %>
     <% else %>
-      <%= menu_item "Acerca de", sip.acercade_path %>
-      <%= menu_item "Iniciar Sesión", main_app.new_usuario_session_path %> 
+      <%= opcion_menu "Acerca de", sip.acercade_path %>
+      <%= opcion_menu "Iniciar Sesión", main_app.new_usuario_session_path %> 
     <% end %>
   <% end %>
 <% end %>
 
 <% content_for :footer do %>
   <p><span class='derechos'>Dominio Público de acuerdo a Legislación Colombiana<br/>
-    Desarrollado por <a href="http://www.pasosdeJesus.org" target="_blank">Pasos de Jesús</a>. 2016. 
+    Desarrollado por 
+    <a href="http://www.pasosdeJesus.org" target="_blank">Pasos de Jesús</a>. 
+    2019. 
   </span></p>
 <% end %>
 

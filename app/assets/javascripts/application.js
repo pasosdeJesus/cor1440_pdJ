@@ -24,7 +24,7 @@ document.addEventListener('turbolinks:load', function() {
 	cor1440_gen_prepara_eventos_comunes(root);
 
 	formato_fecha = 'dd/M/yyyy'
-	if ($('meta[name=formato_fecha]').size() != 0) {
+	if ($('meta[name=formato_fecha]').length != 0) {
 		formato_fecha = $('meta[name=formato_fecha]').attr('content')
 	}
 	$('[data-behaviour~=datepicker]').datepicker({

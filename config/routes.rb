@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope 'cor1440pdJ' do
+  scope '/cor1440pdJ' do
     devise_scope :usuario do
       get 'sign_out' => 'devise/sessions#destroy'
     end

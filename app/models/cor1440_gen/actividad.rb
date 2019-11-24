@@ -30,6 +30,7 @@ module Cor1440Gen
         proyectofinanciero.count == 1 && proyectofinanciero[0].valorhora &&
         actividadpf.count == 1 &&
         actividadpf[0].actividadtipo &&
+        actividadpf[0].actividadtipo.porcentaje &&
         actividadpf[0].actividadtipo.porcentaje > 0 
         
         horas * (actividadpf[0].actividadtipo.porcentaje/100.0) * 

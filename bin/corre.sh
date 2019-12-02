@@ -23,7 +23,8 @@ if (test "$RAILS_ENV" = "development") then {
 	if (test "$SININD" = "") then {
 		bundle exec rake sip:indices
 	} fi;
-	bin/rails s -p $PUERTODES -b $IPDES
+	bin/rails assets:precompile --trace
+	bin/rails s -b "ssl://$IPDES:$PUERTODES?key=server.key&cert=server.crt&verify_mode=peer&ca=/etc/ssl/cert.pem"
 } else {
 	if (test ! -f /etc/rc.d/$RC) then {
 		echo "Falta script /etc/rc.d/$RC"

@@ -23,8 +23,13 @@ class Ability  < Cor1440Gen::Ability
         can :read, Cor1440Gen::Actividadpf
         can :read, Cor1440Gen::ActividadProyectofinanciero
         can :read, Cor1440Gen::Efecto
-        can :read, Cor1440Gen::Informe
+        can :manage, Cor1440Gen::Informe
         can :read, Cor1440Gen::Proyectofinanciero
+
+        can [:read, :create], Heb412Gen::Doc
+        can :read, Heb412Gen::Plantilladoc
+        can :read, Heb412Gen::Plantillahcm
+        can :read, Heb412Gen::Plantillahcr
 
       when Ability::ROLADMIN, Ability::ROLDIR
         can :manage, Cor1440Gen::Actividad
@@ -34,7 +39,10 @@ class Ability  < Cor1440Gen::Ability
         can :manage, Cor1440Gen::Proyectofinanciero
 
         can :manage, Heb412Gen::Doc 
-        
+        can :manage, Heb412Gen::Plantilladoc
+        can :manage, Heb412Gen::Plantillahcm
+        can :manage, Heb412Gen::Plantillahcr
+       
         can :manage, Mr519Gen::Formulario
         
         can :manage, Sip::Actorsocial

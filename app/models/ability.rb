@@ -17,13 +17,18 @@ class Ability  < Cor1440Gen::Ability
     if !usuario.nil? && !usuario.rol.nil? then
       case usuario.rol 
       when Ability::ROLSISTACT
-        can :read, Cor1440Gen::Informe
-        can :read, Cor1440Gen::Actividad
-        can :new, Cor1440Gen::Actividad
+        can [:read, :new], Cor1440Gen::Actividad
         can [:update, :create, :destroy], Cor1440Gen::Actividad, 
           oficina: { id: usuario.oficina_id}
+        can :read, Cor1440Gen::Actividadpf
+        can :read, Cor1440Gen::ActividadProyectofinanciero
+        can :read, Cor1440Gen::Efecto
+        can :read, Cor1440Gen::Informe
+        can :read, Cor1440Gen::Proyectofinanciero
+
       when Ability::ROLADMIN, Ability::ROLDIR
         can :manage, Cor1440Gen::Actividad
+        can :manage, Cor1440Gen::Actividadpf
         can :manage, Cor1440Gen::Efecto
         can :manage, Cor1440Gen::Informe
         can :manage, Cor1440Gen::Proyectofinanciero

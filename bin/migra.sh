@@ -31,7 +31,7 @@ if (test "$?" != "0") then {
 	exit 1; 
 } fi;
 
-bin/rails db:migrate RAILS_ENV=${RAILS_ENV}
+RAILS_ENV=${RAILS_ENV} bin/rails db:migrate 
 if (test "$?" != "0") then { 
 	echo "Problema con db:migrate"; 
 	exit 1; 

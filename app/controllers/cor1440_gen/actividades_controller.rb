@@ -3,7 +3,7 @@
 require_dependency 'cor1440_gen/concerns/controllers/actividades_controller'
 
 module Cor1440Gen
-    class ActividadesController < Sip::ModelosController
+    class ActividadesController < Heb412Gen::ModelosController
 
       include Cor1440Gen::Concerns::Controllers::ActividadesController
 
@@ -45,8 +45,13 @@ module Cor1440Gen
         c.reorder('fecha desc')
       end
 
-      private
 
+      def new
+        new_cor1440_gen
+        redirect_to cor1440_gen.edit_actividad_path(@registro)
+      end
+
+      private
 
       def set_actividad
         @registro = @actividad = Cor1440Gen::Actividad.find(

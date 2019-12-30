@@ -4,22 +4,22 @@
 
 <% content_for :menu do %>
   <%= grupo_menus do %>
-    <%= despliega_abajo "Actividades" do %>
-      <% if can? :read, Cor1440Gen::Actividad %>
+    <% if can? :read, Cor1440Gen::Actividad %>
+      <%= despliega_abajo "Actividades" do %>
         <%= opcion_menu "Listado", cor1440_gen.actividades_path, 
           desplegable: true %>
-      <% end %>
-      <% if can? :read, Cor1440Gen::Informe %>
-        <%= opcion_menu "Informes", cor1440_gen.informes_path,
-          desplegable: true %>
-      <% end %>
-      <% if can? :read, Sip::Persona %>
-        <%= opcion_menu "Persona", sip.personas_path,
-          desplegable: true %>
-      <% end %>
-      <% if can? :read, Sip::Actorsocial%>
-        <%= opcion_menu "Actores sociales", sip.actoressociales_path,
-          desplegable: true %>
+        <% if can? :read, Cor1440Gen::Informe %>
+          <%= opcion_menu "Informes", cor1440_gen.informes_path,
+            desplegable: true %>
+        <% end %>
+        <% if can? :read, Sip::Persona %>
+          <%= opcion_menu "Persona", sip.personas_path,
+            desplegable: true %>
+        <% end %>
+        <% if can? :read, Sip::Actorsocial%>
+          <%= opcion_menu "Actores sociales", sip.actoressociales_path,
+            desplegable: true %>
+        <% end %>
       <% end %>
     <% end %>
     <% if can? :read, Cor1440Gen::Proyectofinanciero %>

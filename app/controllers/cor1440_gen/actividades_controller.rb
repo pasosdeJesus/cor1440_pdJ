@@ -31,7 +31,7 @@ module Cor1440Gen
       end
 
       def atributos_form
-        atributos_index - [:id, :valor]
+        atributos_index - [:id, :valor, :actividadpf]
       end
 
 
@@ -63,8 +63,10 @@ module Cor1440Gen
         atributos_form - 
           [:actividadpf, :proyectosfinancieros, :respuestafor] + [
             :usuario_id,
-            :actividadpf_ids => [],
-            :proyectofinanciero_ids => [],
+            :actividad_proyectofinanciero_attributes => [
+              :id, :proyectofinanciero_id, :_destroy,
+              :actividadpf_ids => []
+            ],
             :respuestafor_attributes => [
               :id, "valorcampo_attributes" => [
                 :valor, :campo_id, :id] +

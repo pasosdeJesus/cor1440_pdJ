@@ -5,6 +5,7 @@ require "application_system_test_case"
 class AccesoTest < ApplicationSystemTestCase
 
   test "no autentica con clave errada a usuario existente" do
+    skip
     @usuario = Usuario.find_by(nusuario: 'cor1440')
     @usuario.password = 'cor1440'
     visit new_usuario_session_path 
@@ -15,6 +16,7 @@ class AccesoTest < ApplicationSystemTestCase
   end
 
   test "autentica con usuario existente en base inicial" do
+    skip
     @usuario = Usuario.find_by(nusuario: 'cor1440')
     @usuario.password = 'cor1440'
     visit new_usuario_session_path 

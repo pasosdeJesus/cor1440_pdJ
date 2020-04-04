@@ -1,15 +1,14 @@
-# Cor1440
+# Cor1440_pdJ
 [![Estado Construcción](https://api.travis-ci.org/pasosdeJesus/cor1440_pdJ.svg?branch=master)](https://travis-ci.org/pasosdeJesus/cor1440_pdJ) [![Clima del Código](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ/badges/gpa.svg)](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ) [![Cobertura de Pruebas](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ/badges/coverage.svg)](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ) [![security](https://hakiri.io/github/pasosdeJesus/cor1440_pdJ/master.svg)](https://hakiri.io/github/pasosdeJesus/cor1440_pdJ/master) [![Dependencias](https://gemnasium.com/pasosdeJesus/cor1440_pdJ.svg)](https://gemnasium.com/pasosdeJesus/cor1440_pdJ) 
 
 
-
-Sistema para planeación y seguimiento de actividades e informes en una ONG.
+Sistema para manejar convenios y actividades en Pasos de Jesús 
 
 
 ### Requerimientos
-* Ruby version >= 2.2
-* PostgreSQL >= 9.4 con extensión unaccent disponible
-* Recomendado sobre adJ 5.6 (que incluye todos los componentes mencionados).  Las siguientes instrucciones suponen que opera en este ambiente.
+* Ruby version >= 2.6
+* PostgreSQL >= 12.0 con extensión unaccent disponible
+* Recomendado sobre adJ 6.6 (que incluye todos los componentes mencionados).  Las siguientes instrucciones suponen que opera en este ambiente.
 
 
 ### Arquitectura

@@ -9,13 +9,13 @@ gem 'bootsnap', '>=1.1.0', require: false
 
 gem 'cancancan'
 
-gem 'coffee-rails' # CoffeeScript para recuersos .js.coffee y vistas
+gem 'coffee-rails' , '>= 5.0.0' # CoffeeScript para recuersos .js.coffee y vistas
 
 gem 'cocoon', git: 'https://github.com/vtamara/cocoon.git', branch: 'new_id_with_ajax' # Formularios anidados (algunos con ajax)
 
-gem 'devise' # Autenticación 
+gem 'devise' , '>= 4.7.2' # Autenticación 
 
-gem 'devise-i18n'
+gem 'devise-i18n', '>= 1.9.1'
 
 gem 'jbuilder' # API JSON facil
 
@@ -29,29 +29,29 @@ gem 'pg' # Postgresql
 
 gem 'prawn' # Generación de PDF
 
-gem 'prawnto_2',  :require => 'prawnto'
+gem 'prawnto_2', '>= 0.3.0', :require => 'prawnto'
 
 gem 'prawn-table'
 
 gem 'puma'
 
-gem 'rails', '~> 6.0.0.rc1'
+gem 'rails', '~> 6.0.3.2'
 
-gem 'rails-i18n'
+gem 'rails-i18n', '>= 6.0.0'
 
 gem 'rubyzip', '>=2.0.0'
 
 gem 'rspreadsheet'
 
-gem 'sassc-rails' # CSS
+gem 'sassc-rails' , '>= 2.1.2' # CSS
 
-gem 'simple_form' # Formularios simples 
+gem 'simple_form' , '>= 5.0.2' # Formularios simples 
 
 gem 'twitter_cldr' # ICU con CLDR
 
 gem 'tzinfo' # Zonas horarias
 
-gem 'webpacker'
+gem 'webpacker', '>= 5.1.1'
 
 gem 'will_paginate' # Listados en páginas
 
@@ -80,7 +80,7 @@ gem 'cor1440_gen',  # Motor de nube y llenado de plantillas
 
 group :development do
 
-  gem 'web-console' # Consola irb en páginas 
+  gem 'web-console' , '>= 4.0.2' # Consola irb en páginas 
 
 end
 

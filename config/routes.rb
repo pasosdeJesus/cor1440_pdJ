@@ -24,6 +24,10 @@ Rails.application.routes.draw do
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
 
+    get '/proyectofinanciero/copia/:formulario_id' =>
+    'proyectosfinancieros#copia',
+      as: :copia_proyectofinancier
+
     root 'sip/hogar#index'
   end
   mount Sip::Engine, at: '/cor1440pdJ', as: 'sip'

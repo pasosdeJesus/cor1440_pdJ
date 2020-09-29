@@ -24,9 +24,9 @@ Rails.application.routes.draw do
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
 
-    get '/proyectofinanciero/copia/:formulario_id' =>
-    'proyectosfinancieros#copia',
-      as: :copia_proyectofinancier
+    get '/proyectofinanciero/copia/:proyectofinanciero_id' =>
+    'cor1440_gen/proyectosfinancieros#copia',
+      as: :copia_proyectofinanciero
 
     root 'sip/hogar#index'
   end

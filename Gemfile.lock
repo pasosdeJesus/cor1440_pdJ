@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: a1417762411493f97eb0254c5a650ba99aeec618
+  revision: 120f8c8f7069b7302f0df7f72436b9bae7ceaab0
   branch: sincoord
   specs:
     cor1440_gen (1.0b3)
@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 1585a60b74e8eaf8f50114a05b866556ba7cdadb
+  revision: 6c59ad428ea9d241c0fd6d5e8314ecc85fdd267e
   specs:
     sip (2.0.b10)
       cancancan

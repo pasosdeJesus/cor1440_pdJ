@@ -1,16 +1,15 @@
 # encoding: UTF-8
 class Ability  < Cor1440Gen::Ability
 
-
-    ROLES = [
-      ["Administrador", ROLADMIN], 
-      ["", 0], 
-      ["Directivo", ROLDIR], 
-      ["", 0], 
-      ["", 0 ],
-      ["", 0],
-      ["Sistematizador de Actividades", ROLSISTACT]
-    ]
+  ROLES = [
+    ["Administrador", ROLADMIN], 
+    ["", 0], 
+    ["Directivo", ROLDIR], 
+    ["", 0], 
+    ["Operador", ROLOPERADOR ],
+    ["", 0],
+    ["", 0]
+  ]
 
   # Ver documentacion de este metodo en app/models/ability de sip
   def initialize(usuario = nil)

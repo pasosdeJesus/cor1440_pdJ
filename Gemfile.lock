@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: be90a008657257f575af0370ea6c40436bedb25f
+  revision: f5e1be9a5960b011eecd3785e4bdfbd858f1c8bb
   branch: rails6.0
   specs:
     cor1440_gen (1.0b3)

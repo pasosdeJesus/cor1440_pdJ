@@ -37,10 +37,15 @@
       <%= despliega_abajo "Documentos y plantillas" do %>
         <%= opcion_menu "Nube", heb412_gen.sisini_path,
           desplegable: true %>
-        <% if current_usuario.rol == Ability::ROLADMIN || 
-             current_usuario.rol == Ability::ROLDIR %>
-           <%= opcion_menu "Definir plantilla hoja de calculo m.", 
-             heb412_gen.new_plantillahcm_path, desplegable: true %>
+        <% if can? :manage, ::Heb412Gen::Plantillahcm %>
+          <%= opcion_menu "Plantillas para listados en hojas de calculo",
+            heb412_gen.plantillashcm_path,
+          desplegable: true %>
+        <% end %>
+        <% if can? :manage, ::Heb412Gen::Plantillahcr %>
+          <%= opcion_menu "Plantillas para un registro en hoja de calculo",
+            heb412_gen.plantillashcr_path,
+            desplegable: true %>
         <% end %>
       <% end %>
       <%= despliega_abajo "Administrar" do %>

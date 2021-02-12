@@ -51,3 +51,7 @@ public/cor1440pdJ/
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+.env
+
+/config/master.key
+config/credentials.yml.enc

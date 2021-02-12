@@ -1,32 +1,45 @@
 #!/bin/sh
-# Inicia produccion
-if (test "${SECRET_KEY_BASE}" = "") then {
-	echo "Definir variable de ambiente SECRET_KEY_BASE"
-	exit 1;
-} fi;
-if (test "${USUARIO_AP}" = "") then {
-	echo "Definir usuario con el que se ejecuta en USUARIO_AP"
-	exit 1;
-} fi;
+# Arranca con unicorn --suponiendo que ya se ejecutaron otras labores
+#   necesarias para ejecutar como instalar gemas, generar recursos, 
+#   actualizar indices, etc.  Ver bin/corre
+
 if (test "${DIRAP}" = "") then {
-	echo "Definir directorio en DIRAP"
-	exit 1;
-} fi;
-if (test "${CONFIG_HOSTS}" = "") then {
-	echo "Definir máquina en CONFIG_HOSTS"
-	exit 1;
+  echo "Definir directorio de la aplicación en DIRAP"
+  exit 1;
 } fi;
 
-
-DOAS=`which doas`
-if (test "$DOAS" = "") then {
-	DOAS=sudo
+if (test -f "${DIRAP}/.env") then {
+  . $DIRAP/.env
 } fi;
-bd=`basename ${DIRAP}`
-$DOAS su ${USUARIO_AP} -c "cd ${DIRAP}; RALS_ENV=production bin/rails assets:precompile"
-$DOAS su - ${USUARIO_AP} -c "cd $DIRAP; RAILS_ENV=production bin/rails sip:indices"
-$DOAS su - ${USUARIO_AP} -c "cd $DIRAP; echo \"Iniciando unicorn...\"; CONFIG_HOSTS=${CONFIG_HOSTS} DIRAP=$DIRAP RAILS_ENV=production SECRET_KEY_BASE=${SECRET_KEY_BASE} bundle exec /usr/local/bin/unicorn_rails -c $DIRAP/config/unicorn.conf.minimal.rb  -E production -D"
 
+if (test "${SECRET_KEY_BASE}" = "") then {
+  echo "Definir variable de ambiente SECRET_KEY_BASE"
+  exit 1;
+} fi;
 
-  
+if (test "${USUARIO_AP}" = "") then {
+  echo "Definir usuario con el que se ejecuta en USUARIO_AP"
+  exit 1;
+} fi;
+
+defuroot=""
+if (test "${RAILS_RELATIVE_URL_ROOT}" != "") then {
+  defuroot="RAILS_RELATIVE_URL_ROOT=${RAILS_RELATIVE_URL_ROOT}"
+} fi;
+
+DOAS=`which doas 2> /dev/null`
+if (test "$?" != "0") then {
+  DOAS="sudo"
+} fi;
+
+$DOAS su - ${USUARIO_AP} -c "cd $DIRAP; 
+  echo \"== Iniciando unicorn... ==\"; 
+  ${defuroot} PUERTOUNICORN=${PUERTOUNICORN} CONFIG_HOSTS=${CONFIG_HOSTS}\
+    DIRAP=$DIRAP RAILS_ENV=production SECRET_KEY_BASE=${SECRET_KEY_BASE} \
+    BD_CLAVE=${BD_CLAVE} BD_USUARIO=${BD_USUARIO} \
+    BD_PRO=${BD_PRO} \
+    RUTA_RELATIVA=${RUTA_RELATIVA} \
+    HEB412_RUTA=${HEB412_RUTA} \
+    bundle exec /usr/local/bin/unicorn_rails \
+    -c $DIRAP/config/unicorn.conf.minimal.rb  -E production -D"
 

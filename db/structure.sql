@@ -1266,7 +1266,8 @@ CREATE TABLE public.cor1440_gen_proyectofinanciero (
     compromisos character varying(5000),
     monto numeric,
     valorhora numeric(20,2),
-    sectorapc_id integer
+    sectorapc_id integer,
+    titulo character varying(1000)
 );
 
 
@@ -6036,6 +6037,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20201214215209'),
 ('20210108202122'),
 ('20210116090353'),
-('20210117234541');
+('20210117234541'),
+('20210201101144');
 
 

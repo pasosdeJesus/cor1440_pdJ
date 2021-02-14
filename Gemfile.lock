@@ -362,7 +362,7 @@ DEPENDENCIES
   prawn-table
   prawnto_2
   puma
-  rails (~> 6.0.3.4)
+  rails (~> 6.0.3.5)
   rails-i18n
   rspreadsheet
   rubyzip (>= 2.0.0)

@@ -56,11 +56,11 @@ if (test "$?" != "0") then {
 	exit 1;
 } fi;
 
-CONFIG_HOSTS="127.0.0.1" bin/rails test:system
-if (test "$?" != "0") then {
-	echo "No pasaron pruebas al sistema";
-	exit 1;
-} fi;
+#CONFIG_HOSTS="127.0.0.1" bin/rails test:system
+#if (test "$?" != "0") then {
+#	echo "No pasaron pruebas al sistema";
+#	exit 1;
+#} fi;
 
 RAILS_ENV=test bin/rails db:structure:dump
 b=`git branch | grep "^*" | sed -e  "s/^* //g"`

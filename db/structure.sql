@@ -235,7 +235,8 @@ CREATE TABLE public.cor1440_gen_actividad (
     lugar character varying(500),
     tiempo numeric(20,2),
     duracion numeric,
-    medduracion character(1)
+    medduracion character(1),
+    duracionvol numeric
 );
 
 
@@ -6049,6 +6050,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210116090353'),
 ('20210117234541'),
 ('20210201101144'),
-('20210303104349');
+('20210303104349'),
+('20210303154412');
 
 

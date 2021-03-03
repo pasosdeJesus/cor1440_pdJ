@@ -1,5 +1,3 @@
-# encoding: UTF-8
-
 require_dependency 'cor1440_gen/concerns/controllers/actividades_controller'
 
 module Cor1440Gen
@@ -16,6 +14,7 @@ module Cor1440Gen
         [ :id, 
           :fecha_localizada, 
           :duracion,
+          :duracionvol,
           :medduracion,
           :responsable,
           :nombre, 
@@ -28,11 +27,18 @@ module Cor1440Gen
       end
 
       def atributos_show
-        atributos_index
+        atributos_index + [
+          :actorsocial,
+          :listadoasistencia,
+          :poblacion,
+          :anexos
+        ]
       end
 
       def atributos_form
-        atributos_index - [:id, :valor, :actividadpf]
+        atributos_show - [
+          :id, :valor, :actividadpf
+        ]
       end
 
 

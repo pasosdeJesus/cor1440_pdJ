@@ -9,16 +9,13 @@
       %>
   </td>
   <td>
-    <%= f.input :nombrecorto, label: false %>
-  </td>
-  <td>
-    <%= f.association :actividadtipo, 
-      collection: Cor1440Gen::Actividadtipo.order(:nombre),
-      label_method: :nombre,
+    <%= f.input :nombrecorto, 
+      input_html: {style: 'width: 5rem'},
       label: false %>
   </td>
   <td>
     <%= f.input :valorfijohora_localizado,
+      input_html: {style: 'width: 6rem'},
       label: false %>
   </td>
   <td>

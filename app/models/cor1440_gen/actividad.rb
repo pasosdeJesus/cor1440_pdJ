@@ -27,14 +27,20 @@ module Cor1440Gen
 
     def valor
       if duracion && duracion > 0 && medduracion &&
-        proyectofinanciero.count == 1 && proyectofinanciero[0].valorhora &&
-        actividadpf.count == 1 &&
-        actividadpf[0].actividadtipo &&
-        actividadpf[0].actividadtipo.porcentaje &&
-        actividadpf[0].actividadtipo.porcentaje > 0 
-        
-        horas * (actividadpf[0].actividadtipo.porcentaje/100.0) * 
-          proyectofinanciero[0].valorhora
+        proyectofinanciero.count == 1 && 
+        actividadpf.count == 1 
+        if proyectofinanciero[0].valorhora &&
+            actividadpf[0].actividadtipo &&
+            actividadpf[0].actividadtipo.porcentaje &&
+            actividadpf[0].actividadtipo.porcentaje > 0 
+
+          horas * (actividadpf[0].actividadtipo.porcentaje/100.0) * 
+            proyectofinanciero[0].valorhora
+        elsif actividadpf[0].valorfijohora
+          horas * actividadpf[0].valorfijohora
+        else
+          0
+        end
       else
         0
       end

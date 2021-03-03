@@ -10,6 +10,7 @@ es:
     attributes:
       "cor1440_gen/actividad":
         duracion: Duración
+        duracionvol: Duración voluntaria
         medduracion: Unidad de duración
       "cor1440_gen/actividadarea":
         Actividadarea: Área de Actividad

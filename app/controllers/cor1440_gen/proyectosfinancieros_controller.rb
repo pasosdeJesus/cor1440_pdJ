@@ -1,4 +1,3 @@
-# encoding: UTF-8
 require_dependency "cor1440_gen/concerns/controllers/proyectosfinancieros_controller"
 
 module Cor1440Gen
@@ -12,6 +11,25 @@ module Cor1440Gen
     load_and_authorize_resource  class: Cor1440Gen::Proyectofinanciero,
       only: [:new, :create, :destroy, :edit, :update, :index, :show,
              :objetivospf]
+
+
+    def proyectofinanciero_params
+      params.require(:proyectofinanciero).permit(
+        proyectofinanciero_params_cor1440_gen.map {|e|
+          e.class == Hash && e[:actividadpf_attributes] ?
+            {:actividadpf_attributes =>  [
+              :id,
+              :resultadopf_id,
+              :actividadtipo_id,
+              :nombrecorto,
+              :titulo,
+              :descripcion,
+              :valorfijohora_localizado,
+              :implicaactividadpf_id,
+              :_destroy ]} : e
+        }
+      )
+    end
 
   end
 end

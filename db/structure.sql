@@ -528,7 +528,9 @@ CREATE TABLE public.cor1440_gen_actividadpf (
     titulo character varying(255),
     descripcion character varying(5000),
     resultadopf_id integer,
-    actividadtipo_id integer
+    actividadtipo_id integer,
+    valorfijohora numeric,
+    implicaactividadpf_id integer
 );
 
 
@@ -5032,6 +5034,14 @@ ALTER TABLE ONLY public.sip_actorsocial
 
 
 --
+-- Name: cor1440_gen_actividadpf fk_rails_5be32a001b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividadpf
+    ADD CONSTRAINT fk_rails_5be32a001b FOREIGN KEY (implicaactividadpf_id) REFERENCES public.cor1440_gen_actividadpf(id);
+
+
+--
 -- Name: cor1440_gen_plantillahcm_proyectofinanciero fk_rails_62c9243a43; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6038,6 +6048,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210108202122'),
 ('20210116090353'),
 ('20210117234541'),
-('20210201101144');
+('20210201101144'),
+('20210303104349');
 
 

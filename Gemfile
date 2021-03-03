@@ -84,12 +84,12 @@ end
 
 
 group :development, :test do
-  #gem 'byebug' # Depurar
+  gem 'byebug' # Depurar
 
   gem 'colorize' # Color en terminal
 
   gem 'dotenv-rails'
-end
+end#
 
 
 group :test do

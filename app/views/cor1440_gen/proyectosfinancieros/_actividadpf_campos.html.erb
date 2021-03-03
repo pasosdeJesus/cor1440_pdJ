@@ -1,0 +1,54 @@
+<tr class='nested-fields'>
+  <td>
+    <%= f.association :resultadopf, 
+      collection: Cor1440Gen::Resultadopf.where(proyectofinanciero_id: 
+                                               f.object.proyectofinanciero_id),
+      label: false,
+      label_method: lambda {
+        |t| (t.objetivopf ? t.objetivopf.numero : '') + t.numero} 
+      %>
+  </td>
+  <td>
+    <%= f.input :nombrecorto, label: false %>
+  </td>
+  <td>
+    <%= f.association :actividadtipo, 
+      collection: Cor1440Gen::Actividadtipo.order(:nombre),
+      label_method: :nombre,
+      label: false %>
+  </td>
+  <td>
+    <%= f.input :valorfijohora_localizado,
+      label: false %>
+  </td>
+  <td>
+    <% col = Cor1440Gen::Actividadpf.where(
+      'proyectofinanciero_id IS NOT NULL') %>
+    <% if f.object.proyectofinanciero_id %>
+      <% col = col.where('proyectofinanciero_id<>?', 
+                         f.object.proyectofinanciero_id) %>
+    <% end %>
+    <%= f.association :implicaactividadpf, 
+      collection: col.order(:proyectofinanciero_id),
+      label_method: lambda {|r| 
+          r.proyectofinanciero_id.to_s + ' ' + r.presenta_nombre },
+      input_html: { class: 'chosen-select' },
+      label: false %>
+  </td>
+  <td>
+    <%= f.input :titulo, label: false %>
+  </td>
+  <td>
+    <%= f.input :descripcion, 
+      as: :text, 
+      input_html: { rows: 3 }, 
+      label: false %>
+  </td>
+  <td>
+    <%= f.input :id, as: :hidden %>
+    <%= link_to_remove_association "Eliminar", f, 
+      :class => 'btn-danger', "data-existing" => true %>
+    <div><%= f.error_notification %></div>
+  </td>
+</tr>
+

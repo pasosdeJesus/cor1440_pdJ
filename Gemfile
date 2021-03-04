@@ -95,7 +95,7 @@ end#
 group :test do
   gem 'capybara'
 
-  gem 'selenium'
+  # gem 'selenium'  --usa jar .. que usa zip y entra en conflicto con rubyzip
 
   gem 'selenium-webdriver'
 

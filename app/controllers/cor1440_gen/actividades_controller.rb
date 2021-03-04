@@ -17,7 +17,7 @@ module Cor1440Gen
           :duracionvol,
           :medduracion,
           :responsable,
-          :nombre,
+          :nombreurlcaso,
           :proyectofinanciero,
           :actividadpf,
           :respuestafor,
@@ -29,7 +29,8 @@ module Cor1440Gen
       end
 
       def atributos_show
-        atributos_index + [
+        a = atributos_index
+        a + [
           :actorsocial,
           :listadoasistencia,
           :poblacion,
@@ -38,6 +39,8 @@ module Cor1440Gen
       end
 
       def atributos_form
+        a = atributos_show
+        a[a.index(:nombreurlcaso)] = 'nombre'
         atributos_show - [
           :id, :valor, :actividadpf
         ]

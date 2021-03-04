@@ -65,8 +65,15 @@ module Cor1440Gen
       when 'medduracion'
         Sip::ModeloHelper.etiqueta_coleccion(
           ::ApplicationHelper::DURACION, medduracion)
+      when 'nombreurlcaso' 
+        if  self.urlcaso
+          "<a href='#{self.urlcaso}'>#{self.nombre}</a>".html_safe
+        else
+          self.nombre
+        end
       when 'responsable'
         responsable ? responsable.presenta_nombre  : '-'
+
       else
         presenta_gen(atr)
       end

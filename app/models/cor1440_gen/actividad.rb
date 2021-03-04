@@ -67,7 +67,8 @@ module Cor1440Gen
           ::ApplicationHelper::DURACION, medduracion)
       when 'nombreurlcaso' 
         u = ''
-        if  self.urlcaso && self.urlcaso && (u = URI.parse(self.urlcaso))
+        if  self.urlcaso && (self.urlcaso != '') && 
+            (u = URI.parse(self.urlcaso))
           "<a href='#{u.to_s}'>"\
             "#{CGI::escapeHTML(self.nombre)}</a>".html_safe
         else

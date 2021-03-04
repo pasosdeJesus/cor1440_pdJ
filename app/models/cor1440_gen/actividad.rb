@@ -66,8 +66,10 @@ module Cor1440Gen
         Sip::ModeloHelper.etiqueta_coleccion(
           ::ApplicationHelper::DURACION, medduracion)
       when 'nombreurlcaso' 
-        if  self.urlcaso
-          "<a href='#{self.urlcaso}'>#{self.nombre}</a>".html_safe
+        u = ''
+        if  self.urlcaso && self.urlcaso && (u = URI.parse(self.urlcaso))
+          "<a href='#{u.to_s}'>"\
+            "#{CGI::escapeHTML(self.nombre)}</a>".html_safe
         else
           self.nombre
         end

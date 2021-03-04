@@ -41,7 +41,7 @@ module Cor1440Gen
       def atributos_form
         a = atributos_show
         a[a.index(:nombreurlcaso)] = 'nombre'
-        atributos_show - [
+        a - [
           :id, :valor, :actividadpf
         ]
       end

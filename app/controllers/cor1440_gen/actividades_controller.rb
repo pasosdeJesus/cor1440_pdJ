@@ -5,23 +5,25 @@ module Cor1440Gen
 
       include Cor1440Gen::Concerns::Controllers::ActividadesController
 
-      before_action :set_actividad, 
+      before_action :set_actividad,
         only: [:show, :edit, :update, :destroy],
         exclude: [:contar, :contar_beneficiarios]
       load_and_authorize_resource class: Cor1440Gen::Actividad
 
       def atributos_index
-        [ :id, 
-          :fecha_localizada, 
+        [ :id,
+          :fecha_localizada,
           :duracion,
           :duracionvol,
           :medduracion,
           :responsable,
-          :nombre, 
+          :nombre,
           :proyectofinanciero,
           :actividadpf,
           :respuestafor,
           :observaciones,
+          :urlcaso,
+          :fecharep_localizada,
           :valor
         ]
       end
@@ -43,12 +45,12 @@ module Cor1440Gen
 
 
       def index_reordenar(c)
-        @horas = c.inject(0) { |memo,r| 
-          r.horas ? memo + r.horas : memo 
-        } 
-        @valor = c.inject(0) { |memo,r| 
+        @horas = c.inject(0) { |memo,r|
+          r.horas ? memo + r.horas : memo
+        }
+        @valor = c.inject(0) { |memo,r|
           r.valor ? memo + r.valor : memo
-        } 
+        }
         c.reorder('fecha desc')
       end
 
@@ -67,7 +69,7 @@ module Cor1440Gen
       end
 
       def lista_params
-        atributos_form - 
+        atributos_form -
           [:actividadpf, :proyectosfinancieros, :respuestafor] + [
             :usuario_id,
             :actividad_proyectofinanciero_attributes => [
@@ -85,27 +87,6 @@ module Cor1440Gen
       # No confiar parametros a Internet, sólo permitir lista blanca
       def actividad_params
         params.require(:actividad).permit(lista_params)
-#          :nombre, 
-#          :objetivo, :proyecto, :resultado,
-#          
-#          :fecha_localizada, :actividad, :observaciones, 
-#          :usuario_id,
-#          :lugar,
-#          :actividadtipo_ids => [],
-#          :proyecto_ids => [],
-#          :usuario_ids => [],
-#          :actividad_rangoedadac_attributes => [
-#            :id, :rangoedadac_id, :fl, :fr, :ml, :mr, :_destroy
-#          ],
-#          :actividad_sip_anexo_attributes => [
-#            :id,
-#            :id_actividad, 
-#            :_destroy,
-#            :sip_anexo_attributes => [
-#              :id, :descripcion, :adjunto, :_destroy
-#            ]
-#          ],
-        #)
       end
 
   end

@@ -11,7 +11,9 @@ es:
       "cor1440_gen/actividad":
         duracion: Duración
         duracionvol: Duración voluntaria
+        fecharep_localizada: Fecha de reporte a cliente
         medduracion: Unidad de duración
+        urlcaso: Url del caso
       "cor1440_gen/actividadarea":
         Actividadarea: Área de Actividad
         Actividadareas: Áreas de Actividad

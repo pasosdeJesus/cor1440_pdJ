@@ -10,6 +10,10 @@ module Cor1440Gen
     attr_accessor :valor
     attr_accessor :horas
 
+    campofecha_localizado :fecharep
+
+    validates :urlcaso, length: {maximum: 2000}
+
     def horas
         case medduracion
         when 'I'
@@ -69,15 +73,22 @@ module Cor1440Gen
     end
 
     scope :filtro_fecha_localizadaini, lambda { |f|
-      where('fecha >= ?', Sip::FormatoFechaHelper.fecha_local_estandar(f))
+      where('fecha >= ?', 
+            Sip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
     scope :filtro_fecha_localizadafin, lambda { |f|
-      where('fecha <= ?', Sip::FormatoFechaHelper.fecha_local_estandar(f))
+      where('fecha <= ?', 
+            Sip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
-    scope :responsable, lambda { |uid|
-      where('usuario_id = ?', uid)
+    scope :filtro_fecharepini, lambda { |f|
+      where('fecharep >= ?', Sip::FormatoFechaHelper.fecha_local_estandar(f))
+    }
+
+    scope :filtro_fecharepfin, lambda { |f|
+      where('fecharep <= ?', 
+            Sip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
     scope :filtro_nombre, lambda { |n|
@@ -87,5 +98,14 @@ module Cor1440Gen
     scope :filtro_observaciones, lambda {|o|
       where("unaccent(observaciones) ILIKE '%' || unaccent(?) || '%'", o)
     } 
+
+    scope :responsable, lambda { |uid|
+      where('usuario_id = ?', uid)
+    }
+
+    scope :filtro_urlcaso, lambda {|u|
+      where("unaccent(urlcaso) ILIKE '%' || unaccent(?) || '%'", u)
+    } 
+
   end
 end

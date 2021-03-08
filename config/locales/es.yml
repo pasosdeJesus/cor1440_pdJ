@@ -14,7 +14,7 @@ es:
         fecharep_localizada: Fecha de reporte a cliente
         medduracion: Unidad de duración
         nombreurlcaso: Nombre/Enlace
-        urlcaso: Url del caso
+        urlcaso: Url de la evidencia
       "cor1440_gen/actividadarea":
         Actividadarea: Área de Actividad
         Actividadareas: Áreas de Actividad

@@ -101,7 +101,7 @@ module Cor1440Gen
             Sip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
-    scope :filtro_nombre, lambda { |n|
+    scope :filtro_nombreurlcaso, lambda { |n|
       where("unaccent(nombre) ILIKE '%' || unaccent(?) || '%'", n)
     }
 

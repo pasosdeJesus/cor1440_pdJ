@@ -233,7 +233,6 @@ CREATE TABLE public.cor1440_gen_actividad (
     rangoedadac_id integer,
     usuario_id integer NOT NULL,
     lugar character varying(500),
-    tiempo numeric(20,2),
     duracion numeric,
     medduracion character(1),
     duracionvol numeric,
@@ -533,7 +532,9 @@ CREATE TABLE public.cor1440_gen_actividadpf (
     resultadopf_id integer,
     actividadtipo_id integer,
     valorfijohora numeric,
-    implicaactividadpf_id integer
+    implicaactividadpf_id integer,
+    formulario_id integer,
+    heredade_id integer
 );
 
 
@@ -1569,6 +1570,123 @@ CREATE SEQUENCE public.cor1440_gen_valorcampotind_id_seq
 --
 
 ALTER SEQUENCE public.cor1440_gen_valorcampotind_id_seq OWNED BY public.cor1440_gen_valorcampotind.id;
+
+
+--
+-- Name: usuario_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.usuario_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: usuario; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.usuario (
+    id integer DEFAULT nextval('public.usuario_id_seq'::regclass) NOT NULL,
+    nusuario character varying(15) NOT NULL,
+    password character varying(64) DEFAULT ''::character varying NOT NULL,
+    nombre character varying(50) COLLATE public.es_co_utf_8,
+    descripcion character varying(50),
+    rol integer DEFAULT 4,
+    idioma character varying(6) DEFAULT 'es_CO'::character varying NOT NULL,
+    email character varying(255) DEFAULT ''::character varying NOT NULL,
+    encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
+    sign_in_count integer DEFAULT 0 NOT NULL,
+    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
+    fechadeshabilitacion date,
+    reset_password_token character varying(255),
+    reset_password_sent_at timestamp without time zone,
+    remember_created_at timestamp without time zone,
+    current_sign_in_at timestamp without time zone,
+    last_sign_in_at timestamp without time zone,
+    current_sign_in_ip character varying(255),
+    last_sign_in_ip character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone,
+    regionsjr_id integer,
+    failed_attempts integer DEFAULT 0,
+    unlock_token character varying(255),
+    locked_at timestamp without time zone,
+    oficina_id integer,
+    tema_id integer,
+    CONSTRAINT usuario_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion))),
+    CONSTRAINT usuario_rol_check CHECK ((rol >= 1))
+);
+
+
+--
+-- Name: detalle; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW public.detalle AS
+ SELECT usuario.nusuario,
+    actividad.id,
+    actividad.fecha,
+    at.nombre AS act,
+    p.nombre AS conv,
+    (actividad.observaciones)::double precision AS tiempo,
+    (p.observaciones)::double precision AS vht,
+    (at.observaciones)::double precision AS porc,
+    ((((at.observaciones)::double precision * (actividad.observaciones)::double precision) * (p.observaciones)::double precision) / (100)::double precision) AS tot
+   FROM (((((public.cor1440_gen_actividad actividad
+     JOIN public.cor1440_gen_actividad_proyectofinanciero ap ON ((ap.actividad_id = actividad.id)))
+     JOIN public.usuario ON ((actividad.usuario_id = usuario.id)))
+     JOIN public.cor1440_gen_proyectofinanciero p ON ((ap.proyectofinanciero_id = p.id)))
+     JOIN public.cor1440_gen_actividad_actividadtipo t ON ((actividad.id = t.actividad_id)))
+     JOIN public.cor1440_gen_actividadtipo at ON ((at.id = t.actividadtipo_id)));
+
+
+--
+-- Name: detalle2; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW public.detalle2 AS
+ SELECT a.id,
+    a.fecha,
+    p.nombre AS nombreconvenio,
+    p.valorhora,
+    a.nombre AS nombreactividad,
+    (v.valor)::numeric AS horas,
+    v.campoact_id,
+    ta.nombre AS nombretipoactividad,
+    ta.porcentaje
+   FROM (((((public.cor1440_gen_valorcampoact v
+     JOIN public.cor1440_gen_actividad a ON ((v.actividad_id = a.id)))
+     JOIN public.cor1440_gen_campoact c ON ((v.campoact_id = c.id)))
+     JOIN public.cor1440_gen_actividadtipo ta ON ((c.actividadtipo_id = ta.id)))
+     JOIN public.cor1440_gen_actividad_proyectofinanciero ap ON ((ap.actividad_id = a.id)))
+     JOIN public.cor1440_gen_proyectofinanciero p ON ((ap.proyectofinanciero_id = p.id)))
+  WHERE (ta.id <> 112);
+
+
+--
+-- Name: detalle3; Type: VIEW; Schema: public; Owner: -
+--
+
+CREATE VIEW public.detalle3 AS
+ SELECT a.id,
+    p.nombre AS nombreconvenio,
+    p.valorhora,
+    a.nombre AS nombreactividad,
+    ta.id AS taid,
+    v.valor AS horas,
+    v.campoact_id,
+    ta.nombre AS nombretipoactividad,
+    ta.porcentaje
+   FROM (((((public.cor1440_gen_valorcampoact v
+     JOIN public.cor1440_gen_actividad a ON ((v.actividad_id = a.id)))
+     JOIN public.cor1440_gen_campoact c ON ((v.campoact_id = c.id)))
+     JOIN public.cor1440_gen_actividadtipo ta ON ((c.actividadtipo_id = ta.id)))
+     JOIN public.cor1440_gen_actividad_proyectofinanciero ap ON ((ap.actividad_id = a.id)))
+     JOIN public.cor1440_gen_proyectofinanciero p ON ((ap.proyectofinanciero_id = p.id)))
+  WHERE (ta.id <> 112);
 
 
 --
@@ -2618,7 +2736,7 @@ CREATE TABLE public.sip_grupoper (
 -- Name: TABLE sip_grupoper; Type: COMMENT; Schema: public; Owner: -
 --
 
-COMMENT ON TABLE public.sip_grupoper IS 'Creado por sip en cor1440pdJ_desarrollo';
+COMMENT ON TABLE public.sip_grupoper IS 'Creado por sip en cor1440pdJ_produccion';
 
 
 --
@@ -3166,55 +3284,6 @@ CREATE SEQUENCE public.sip_ubicacionpre_id_seq
 --
 
 ALTER SEQUENCE public.sip_ubicacionpre_id_seq OWNED BY public.sip_ubicacionpre.id;
-
-
---
--- Name: usuario_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.usuario_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: usuario; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.usuario (
-    id integer DEFAULT nextval('public.usuario_id_seq'::regclass) NOT NULL,
-    nusuario character varying(15) NOT NULL,
-    password character varying(64) DEFAULT ''::character varying NOT NULL,
-    nombre character varying(50) COLLATE public.es_co_utf_8,
-    descripcion character varying(50),
-    rol integer DEFAULT 4,
-    idioma character varying(6) DEFAULT 'es_CO'::character varying NOT NULL,
-    email character varying(255) DEFAULT ''::character varying NOT NULL,
-    encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
-    sign_in_count integer DEFAULT 0 NOT NULL,
-    fechacreacion date DEFAULT ('now'::text)::date NOT NULL,
-    fechadeshabilitacion date,
-    reset_password_token character varying(255),
-    reset_password_sent_at timestamp without time zone,
-    remember_created_at timestamp without time zone,
-    current_sign_in_at timestamp without time zone,
-    last_sign_in_at timestamp without time zone,
-    current_sign_in_ip character varying(255),
-    last_sign_in_ip character varying(255),
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    regionsjr_id integer,
-    failed_attempts integer DEFAULT 0,
-    unlock_token character varying(255),
-    locked_at timestamp without time zone,
-    oficina_id integer,
-    tema_id integer,
-    CONSTRAINT usuario_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion))),
-    CONSTRAINT usuario_rol_check CHECK ((rol >= 1))
-);
 
 
 --
@@ -4765,6 +4834,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac
 
 
 --
+-- Name: cor1440_gen_actividadpf fk_rails_16d8cc3b46; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividadpf
+    ADD CONSTRAINT fk_rails_16d8cc3b46 FOREIGN KEY (heredade_id) REFERENCES public.cor1440_gen_actividadpf(id);
+
+
+--
 -- Name: mr519_gen_encuestausuario fk_rails_1b24d10e82; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5509,6 +5586,14 @@ ALTER TABLE ONLY public.cor1440_gen_valorcampoact
 
 
 --
+-- Name: cor1440_gen_actividadpf fk_rails_e69a8b5822; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividadpf
+    ADD CONSTRAINT fk_rails_e69a8b5822 FOREIGN KEY (formulario_id) REFERENCES public.mr519_gen_formulario(id);
+
+
+--
 -- Name: cor1440_gen_beneficiariopf fk_rails_e6ba73556e; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -6054,6 +6139,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210201101144'),
 ('20210303104349'),
 ('20210303154412'),
-('20210304113350');
+('20210304113350'),
+('20210308183041'),
+('20210308211112'),
+('20210308214507');
 
 

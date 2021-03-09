@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/pasosdeJesus/cor1440_gen.git
-  revision: fd4454aeb8b950e90650ef09fe5615ccf6e4ede1
+  revision: 72210bf11f9af2502df496583a9cd2da04d3417f
   branch: main
   specs:
     cor1440_gen (1.0b3)
@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/heb412_gen.git
-  revision: 4941801fa6559713a421a4feb128ce9f19171d18
+  revision: 678b1b1f2ea3f93387683e9cb3cb3996473d939c
   branch: main
   specs:
     heb412_gen (1.0.b6)
@@ -170,7 +170,7 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
-    ffi (1.14.2)
+    ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.9)

@@ -32,14 +32,13 @@ module Cor1440Gen
     def valor
       if duracion && duracion > 0 && medduracion &&
         proyectofinanciero.count == 1 && 
-        actividadpf.count == 1 
-        if actividadpf[0].valorfijohora
-          horas * actividadpf[0].valorfijohora
-        elsif actividadpf[0].implicaactividadpf_id &&
-          Cor1440Gen::Actividadpf.find(
-            actividadpf[0].implicaactividadpf_id).valorfijohora 
-          horas * Cor1440Gen::Actividadpf.find(
-            actividadpf[0].implicaactividadpf_id).valorfijohora 
+        actividadpf.count == 1
+        a = actividadpf[0]
+        while a && (!a.valorfijohora || a.valorfijohora <= 0)
+          a = a.heredade
+        end
+        if a 
+          horas * a.valorfijohora
         elsif proyectofinanciero[0].valorhora &&
             actividadpf[0].actividadtipo &&
             actividadpf[0].actividadtipo.porcentaje &&
@@ -76,7 +75,6 @@ module Cor1440Gen
         end
       when 'responsable'
         responsable ? responsable.presenta_nombre  : '-'
-
       else
         presenta_cor1440_gen(atr)
       end

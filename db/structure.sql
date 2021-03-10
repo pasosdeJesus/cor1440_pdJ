@@ -5051,7 +5051,7 @@ ALTER TABLE ONLY public.sip_actorsocial
 --
 
 ALTER TABLE ONLY public.cor1440_gen_actividadpf
-    ADD CONSTRAINT fk_rails_5be32a001b FOREIGN KEY (implicaactividadpf_id) REFERENCES public.cor1440_gen_actividadpf(id);
+    ADD CONSTRAINT fk_rails_5be32a001b FOREIGN KEY (heredade_id) REFERENCES public.cor1440_gen_actividadpf(id);
 
 
 --
@@ -6074,6 +6074,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20210303154412'),
 ('20210304113350'),
 ('20210308183041'),
+('20210308194452'),
 ('20210308211112'),
 ('20210308214507');
 

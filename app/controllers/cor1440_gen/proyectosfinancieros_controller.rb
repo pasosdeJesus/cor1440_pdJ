@@ -18,14 +18,15 @@ module Cor1440Gen
         proyectofinanciero_params_cor1440_gen.map {|e|
           e.class == Hash && e[:actividadpf_attributes] ?
             {:actividadpf_attributes =>  [
-              :id,
-              :resultadopf_id,
               :actividadtipo_id,
-              :nombrecorto,
-              :titulo,
               :descripcion,
+              :formulario_id,
+              :heredade_id,
+              :id,
+              :nombrecorto,
+              :resultadopf_id,
+              :titulo,
               :valorfijohora_localizado,
-              :implicaactividadpf_id,
               :_destroy ]} : e
         }
       )

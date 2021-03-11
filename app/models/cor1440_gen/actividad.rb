@@ -78,7 +78,7 @@ module Cor1440Gen
         responsable ? responsable.presenta_nombre  : '-'
 
       else
-        presenta_gen(atr)
+        presenta_cor1440_gen(atr)
       end
     end
 

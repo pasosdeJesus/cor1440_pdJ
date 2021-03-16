@@ -533,9 +533,8 @@ CREATE TABLE public.cor1440_gen_actividadpf (
     resultadopf_id integer,
     actividadtipo_id integer,
     valorfijohora numeric,
-    implicaactividadpf_id integer,
-    formulario_id integer,
-    heredade_id integer
+    heredade_id integer,
+    formulario_id integer
 );
 
 
@@ -4764,14 +4763,6 @@ ALTER TABLE ONLY public.cor1440_gen_actorsocial_efecto
 
 ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac
     ADD CONSTRAINT fk_rails_1366d14fb8 FOREIGN KEY (rangoedadac_id) REFERENCES public.cor1440_gen_rangoedadac(id);
-
-
---
--- Name: cor1440_gen_actividadpf fk_rails_16d8cc3b46; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.cor1440_gen_actividadpf
-    ADD CONSTRAINT fk_rails_16d8cc3b46 FOREIGN KEY (heredade_id) REFERENCES public.cor1440_gen_actividadpf(id);
 
 
 --

@@ -67,6 +67,7 @@ module Cor1440Gen
       when 'nombreurlcaso' 
         u = ''
         if  self.urlcaso && (self.urlcaso != '') && 
+            self.urlcaso =~  URI::regexp &&
             (u = URI.parse(self.urlcaso))
           "<a href='#{u.to_s}'>"\
             "#{CGI::escapeHTML(self.nombre)}</a>".html_safe

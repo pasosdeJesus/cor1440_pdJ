@@ -28,7 +28,9 @@ class Ability  < Cor1440Gen::Ability
           'campos_dinamicos',
           'corresponsables',
           'creacion',
+          'duracionvol',
           'fecha',
+          'fecharep',
           'fecha_localizada',
           'duracion',
           'id',
@@ -87,6 +89,7 @@ class Ability  < Cor1440Gen::Ability
           'responsable',
           'responsable_nombre',
           'resultado',
+          'urlcaso'
         ],
         controlador: 'Cor1440Gen::ActividadesController',
         ruta: '/actividades'

@@ -66,13 +66,16 @@ module Cor1440Gen
           ::ApplicationHelper::DURACION, medduracion)
       when 'nombreurlcaso' 
         u = ''
-        if  self.urlcaso && (self.urlcaso != '') && 
-            self.urlcaso =~  URI::regexp &&
-            (u = URI.parse(self.urlcaso))
-          "<a href='#{u.to_s}'>"\
-            "#{CGI::escapeHTML(self.nombre)}</a>".html_safe
+        if  self.urlcaso && (self.urlcaso != '')
+          begin
+            u = URI.parse(self.urlcaso)
+            return "<a href='#{u.to_s}'>"\
+              "#{CGI::escapeHTML(self.nombre)}</a>".html_safe
+          rescue
+            return self.nombre
+          end
         else
-          self.nombre
+          return self.nombre
         end
       when 'responsable'
         responsable ? responsable.presenta_nombre  : '-'

@@ -27,6 +27,8 @@
     <% end %>
     <% if can? :index, Cor1440Gen::Efecto %>
       <%= despliega_abajo "Indicadores" do %>
+        <%= opcion_menu "Medición", 
+          cor1440_gen.mindicadorespf_path, desplegable: true %>
         <%= opcion_menu "Avance en indicadores de Efecto", 
           cor1440_gen.efectos_path, desplegable: true %>
       <% end %>

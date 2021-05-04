@@ -79,6 +79,15 @@ module Cor1440Gen
               :id, :proyectofinanciero_id, :_destroy,
               :actividadpf_ids => []
             ],
+            :actividad_sip_anexo_attributes => [
+              :id,
+              :id_actividad, 
+              :_destroy,
+              :sip_anexo_attributes => [
+                :id, :descripcion, :adjunto, :_destroy
+              ]
+            ],
+            :actorsocial_ids => [],
             :respuestafor_attributes => [
               :id, "valorcampo_attributes" => [
                 :valor, :campo_id, :id] +

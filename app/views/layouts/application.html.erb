@@ -16,8 +16,8 @@
           <%= opcion_menu "Persona", sip.personas_path,
             desplegable: true %>
         <% end %>
-        <% if can? :read, Sip::Actorsocial%>
-          <%= opcion_menu "Organizaciones sociales", sip.actoressociales_path,
+        <% if can? :read, Sip::Orgsocial %>
+          <%= opcion_menu "Organizaciones sociales", sip.orgsociales_path,
             desplegable: true %>
         <% end %>
       <% end %>

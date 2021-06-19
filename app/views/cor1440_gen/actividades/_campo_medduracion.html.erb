@@ -1,3 +1,7 @@
+<% vmed = f.object.medduracion || 'H' %>
+
 <%= f.input :medduracion,
-  collection: ApplicationHelper::DURACION
+  collection: ApplicationHelper::DURACION,
+  selected: vmed,
+  include_blank: false
 %>

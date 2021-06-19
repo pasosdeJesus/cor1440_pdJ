@@ -1,8 +1,8 @@
 module ApplicationHelper
 
   DURACION = [
-    ['Minutos', :I],
     ['Horas', :H],
+    ['Minutos', :I],
     ['Días', :D],
     ['Meses', :M]
   ]

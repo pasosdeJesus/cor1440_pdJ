@@ -57,12 +57,6 @@ module Cor1440Gen
         c.reorder('fecha desc')
       end
 
-
-      def new
-        new_cor1440_gen
-        redirect_to cor1440_gen.edit_actividad_path(@registro)
-      end
-
       private
 
       def set_actividad

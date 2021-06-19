@@ -31,7 +31,7 @@ module Cor1440Gen
       def atributos_show
         a = atributos_index
         a + [
-          :actorsocial,
+          :orgsocial,
           :listadoasistencia,
           :poblacion,
           :anexos

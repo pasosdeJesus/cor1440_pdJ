@@ -533,8 +533,9 @@ CREATE TABLE public.cor1440_gen_actividadpf (
     resultadopf_id integer,
     actividadtipo_id integer,
     valorfijohora numeric,
-    heredade_id integer,
-    formulario_id integer
+    implicaactividadpf_id integer,
+    formulario_id integer,
+    heredade_id integer
 );
 
 
@@ -4856,6 +4857,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_rangoedadac
 
 
 --
+-- Name: cor1440_gen_actividadpf fk_rails_16d8cc3b46; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.cor1440_gen_actividadpf
+    ADD CONSTRAINT fk_rails_16d8cc3b46 FOREIGN KEY (heredade_id) REFERENCES public.cor1440_gen_actividadpf(id);
+
+
+--
 -- Name: mr519_gen_encuestausuario fk_rails_1b24d10e82; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5148,7 +5157,7 @@ ALTER TABLE ONLY public.sip_orgsocial
 --
 
 ALTER TABLE ONLY public.cor1440_gen_actividadpf
-    ADD CONSTRAINT fk_rails_5be32a001b FOREIGN KEY (heredade_id) REFERENCES public.cor1440_gen_actividadpf(id);
+    ADD CONSTRAINT fk_rails_5be32a001b FOREIGN KEY (implicaactividadpf_id) REFERENCES public.cor1440_gen_actividadpf(id);
 
 
 --

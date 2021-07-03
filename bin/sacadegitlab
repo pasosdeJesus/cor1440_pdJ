@@ -1,0 +1,4 @@
+#!/bin/sh
+
+f=`date +%Y-%m-%d`
+fecharep=$f bin/railsp runner -e production lib/guiones/sacagitlab.rb

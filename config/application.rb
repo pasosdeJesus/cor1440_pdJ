@@ -26,10 +26,13 @@ module Cor1440pdJ
     config.i18n.default_locale = :es
 
     config.active_record.schema_format = :sql
-    
+
     #config.railties_order = [:main_app, Sip::Engine, :all]
-    
-    config.x.heb412_ruta = Rails.root.join('public', 'heb412')
+
+    config.x.heb412_ruta = Pathname(
+      ENV.fetch('HEB412_RUTA', Rails.root.join('public', 'heb412').to_s)
+    )
+    puts "OJO application.rb config.x.heb412_ruta=#{config.x.heb412_ruta}"
 
     config.hosts << ENV['CONFIG_HOSTS'] || '127.0.0.1'
 

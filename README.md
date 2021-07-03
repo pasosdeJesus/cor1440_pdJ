@@ -1,7 +1,7 @@
 # Cor1440_pdJ
 
 
-[![Revisado por Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) [![Estado Construcción](https://api.travis-ci.org/pasosdeJesus/cor1440_pdJ.svg?branch=master)](https://travis-ci.org/pasosdeJesus/cor1440_pdJ) [![Clima del Código](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ/badges/gpa.svg)](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ) [![Cobertura de Pruebas](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ/badges/coverage.svg)](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ) [![security](https://hakiri.io/github/pasosdeJesus/cor1440_pdJ/master.svg)](https://hakiri.io/github/pasosdeJesus/cor1440_pdJ/master)
+[![Revisado por Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com) [![Estado Construcción](https://gitlab.com/pasosdeJesus/cor1440_pdJ/badges/main/pipeline.svg)](https://gitlab.com/pasosdeJesus/cor1440_pdJ/-/pipelines)[![Clima del Código](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ/badges/gpa.svg)](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ) [![Cobertura de Pruebas](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ/badges/coverage.svg)](https://codeclimate.com/github/pasosdeJesus/cor1440_pdJ) [![security](https://hakiri.io/github/pasosdeJesus/cor1440_pdJ/master.svg)](https://hakiri.io/github/pasosdeJesus/cor1440_pdJ/master)
 
 
 Sistema para manejar convenios y actividades en Pasos de Jesús 

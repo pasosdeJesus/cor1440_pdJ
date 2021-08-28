@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 #ruby '~>2.7.1'
 
+gem 'apexcharts'
+
 gem 'bcrypt'
 
 gem 'bootsnap', '>=1.1.0', require: false
@@ -41,6 +43,8 @@ gem 'rails', '~> 6.1'
 
 gem 'rails-i18n'
 
+gem 'redcarpet'
+
 gem 'rubyzip', '>=2.0.0'
 
 gem 'rspreadsheet'
@@ -63,19 +67,19 @@ gem 'will_paginate' # Listados en páginas
 # lógico y no alfabetico como las gemas anteriores) 
 
 gem 'sip', # Motor generico
-  git: 'https://github.com/pasosdeJesus/sip.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/sip.git', branch: :bs5
   #path: '../sip'
 
 gem 'mr519_gen', # Motor de gestion de formularios y encuestas
-  git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/mr519_gen.git', branch: :bs5
   #path: '../mr519_gen'
 
 gem 'heb412_gen',  # Motor de nube y llenado de plantillas
-  git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/heb412_gen.git', branch: :bs5
   #path: '../heb412_gen'
 
 gem 'cor1440_gen',  # Motor de nube y llenado de plantillas
-  git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: :main
+  git: 'https://github.com/pasosdeJesus/cor1440_gen.git', branch: :bs5
   #path: '../cor1440_gen'
 
 

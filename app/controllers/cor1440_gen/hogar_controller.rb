@@ -1,7 +1,7 @@
-# encoding: UTF-8
 module Cor1440Gen
   class HogarController < Sip::HogarController
 
+    # Sin definición de autorización por ser para no autenticados
     def index
       if current_usuario
         authorize! :nuevo, Cor1440Gen::Actividad

@@ -81,7 +81,7 @@ module Cor1440Gen
                 :id, :descripcion, :adjunto, :_destroy
               ]
             ],
-            :actorsocial_ids => [],
+            :orgsocial_ids => [],
             :respuestafor_attributes => [
               :id, "valorcampo_attributes" => [
                 :valor, :campo_id, :id] +

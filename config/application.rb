@@ -32,7 +32,11 @@ module Cor1440pdJ
     )
     puts "OJO application.rb config.x.heb412_ruta=#{config.x.heb412_ruta}"
 
-    config.hosts << ENV['CONFIG_HOSTS'] || '127.0.0.1'
+    puts "CONFIG_HOSTS="+ENV.fetch('CONFIG_HOSTS', 'defensor.info').to_s
+    config.hosts.concat(
+      ENV.fetch('CONFIG_HOSTS', 'defensor.info').downcase.split(";"))
+
+
 
     config.relative_url_root = "/cor1440pdJ"
   end

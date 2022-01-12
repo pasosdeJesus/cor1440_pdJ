@@ -16,10 +16,9 @@
 //= require cor1440_gen/motor
 //= require_tree .
 
-document.addEventListener('turbolinks:load', function() {
+document.addEventListener('turbo:load', function() {
 	var root;
-  	root = typeof exports !== "undefined" && exports !== null ? 
-	  exports : window;
+	root = window;
 	sip_prepara_eventos_comunes(root, '/cor1440pdJ');
 	mr519_gen_prepara_eventos_comunes(root);
 	heb412_gen_prepara_eventos_comunes(root);

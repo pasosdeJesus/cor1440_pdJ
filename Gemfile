@@ -108,6 +108,8 @@ end#
 
 
 group :test do
+  gem 'cuprite'
+
   gem 'capybara'
 
   # gem 'selenium'  --usa jar .. que usa zip y entra en conflicto con rubyzip

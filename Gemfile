@@ -99,7 +99,7 @@ end
 
 
 group :development, :test do
-  #gem 'byebug' # Depurar
+  gem 'debug' # Depurar
 
   gem 'colorize' # Color en terminal
 

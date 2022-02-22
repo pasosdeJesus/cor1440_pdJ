@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: 95ef350f93e6cb720a827a747c2c811d019f5489
+  revision: e866fb942a9ab792144adc3ec2d41430977a4408
   branch: main
   specs:
     sip (2.1a1)
@@ -374,7 +374,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stimulus-rails (1.0.3)
+    stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
     terrapin (0.6.0)

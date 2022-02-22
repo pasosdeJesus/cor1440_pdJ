@@ -46,9 +46,14 @@ module Cor1440Gen
         ]
       end
 
+      def prefiltrar
+        if params[:filtro].nil?
+          params[:filtro] = {}
+          params[:filtro][:busfechaini] = "#{Date.today.year}-01-01"
+        end
+      end
 
       def index_reordenar(c)
-        @filtropred_fechaini="#{Date.today.year}-01-01"
         @horas = c.inject(0) { |memo,r|
           r.horas ? memo + r.horas : memo
         }

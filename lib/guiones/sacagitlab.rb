@@ -1,5 +1,7 @@
 #require 'byebug'
 
+require 'net/http'
+
 #url = 'https://api.github.com/repos/pasosdeJesus/sivel2_sjrcol/issues?state=closed&sort=updated'
 url = 'https://gitlab.com/api/v4/projects/25947661/issues?state=closed&order_by=updated_at'
 uri = URI.parse(url)

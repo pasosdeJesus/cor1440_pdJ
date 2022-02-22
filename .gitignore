@@ -58,3 +58,4 @@ config/credentials.yml.enc
 public/assets/
 public/heb412/Documentos/
 app/assets/builds/
+app/javascript/controllers/sip

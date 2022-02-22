@@ -48,6 +48,7 @@ module Cor1440Gen
 
 
       def index_reordenar(c)
+        @filtropred_fechaini="#{Date.today.year}-01-01"
         @horas = c.inject(0) { |memo,r|
           r.horas ? memo + r.horas : memo
         }

@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/pasosdeJesus/sip.git
-  revision: df8eb8c4da8dc61216f2758805a34e6a6739bb5d
+  revision: 95ef350f93e6cb720a827a747c2c811d019f5489
   branch: main
   specs:
     sip (2.1a1)
@@ -276,7 +276,7 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.2)
+    nokogiri (1.13.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     odf-report (0.7.2)

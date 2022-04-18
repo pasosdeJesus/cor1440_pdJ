@@ -1,0 +1,7 @@
+<%= f.input :observaciones,
+  as: :text,
+  input_html: {
+    value: f.object.observaciones ? f.object.observaciones : '',
+    rows: 10
+  }
+%>

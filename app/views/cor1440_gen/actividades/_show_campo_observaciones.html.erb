@@ -1,0 +1,12 @@
+<% if @registro.observaciones %>
+  <% @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, {
+    autolink: true,
+    space_after_headers: true,
+    fenced_code_blocks: true,
+    underline: true,
+    highlight: true,
+    footnotes: true,
+    tables: true }) %>
+  <% c = @markdown.render(@registro.observaciones).html_safe %>
+  <%= c %>
+<% end %>

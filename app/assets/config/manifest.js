@@ -2,7 +2,11 @@
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
 //= link_directory ../../../node_modules/chosen-js .png
-
+//= link_directory ../../../vendedor/recursos/remixicon .eot
+//= link_directory ../../../vendedor/recursos/remixicon .svg
+//= link_directory ../../../vendedor/recursos/remixicon .ttf
+//= link_directory ../../../vendedor/recursos/remixicon .woff
+//= link_directory ../../../vendedor/recursos/remixicon .woff2
 //= link application.css
 //= link_tree ../builds
 //= link recursos_sprockets.js

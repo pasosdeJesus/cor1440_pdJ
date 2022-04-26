@@ -3,74 +3,76 @@
 <% end %>
 
 <% content_for :menu do %>
-  <%= grupo_menus do %>
+  <%= grupo_menus_prosidebar do %>
     <% if can? :read, Cor1440Gen::Actividad %>
-      <%= despliega_abajo "Actividades" do %>
-        <%= opcion_menu "Listado", cor1440_gen.actividades_path, 
+      <%= despliega_abajo_prosidebar "Actividades", 'ri-riding-fill', nil do %>
+        <%= opcion_menu_prosidebar "Listado", cor1440_gen.actividades_path, 
           desplegable: true %>
         <% if can? :read, Cor1440Gen::Informe %>
-          <%= opcion_menu "Informes", cor1440_gen.informes_path,
+          <%= opcion_menu_prosidebar "Informes", cor1440_gen.informes_path,
             desplegable: true %>
         <% end %>
         <% if can? :read, Sip::Persona %>
-          <%= opcion_menu "Persona", sip.personas_path,
+          <%= opcion_menu_prosidebar "Persona", sip.personas_path,
             desplegable: true %>
         <% end %>
         <% if can? :read, Sip::Orgsocial %>
-          <%= opcion_menu "Organizaciones sociales", sip.orgsociales_path,
+          <%= opcion_menu_prosidebar "Organizaciones sociales", sip.orgsociales_path,
             desplegable: true %>
         <% end %>
       <% end %>
     <% end %>
     <% if can? :read, Cor1440Gen::Proyectofinanciero %>
-      <%= opcion_menu "Convenios", cor1440_gen.proyectosfinancieros_path %>
+      <%= opcion_menu_prosidebar "Convenios", 
+        cor1440_gen.proyectosfinancieros_path, icono: 'ri-briefcase-4-fill' %>
     <% end %>
     <% if can? :index, Cor1440Gen::Efecto %>
-      <%= despliega_abajo "Indicadores" do %>
-        <%= opcion_menu "Medición", 
+      <%= despliega_abajo_prosidebar "Indicadores", 
+        'ri-line-chart-fill', nil do %>
+        <%= opcion_menu_prosidebar "Medición", 
           cor1440_gen.mindicadorespf_path, desplegable: true %>
-        <%= opcion_menu "Avance en indicadores de Efecto", 
+        <%= opcion_menu_prosidebar "Avance en indicadores de Efecto", 
           cor1440_gen.efectos_path, desplegable: true %>
       <% end %>
     <% end %>
-  <% end %>
-  <%= grupo_menus :pull => :right do %>
     <% if !current_usuario.nil? %>
-      <%= despliega_abajo "Documentos y plantillas" do %>
-        <%= opcion_menu "Nube", heb412_gen.sisini_path,
+      <%= despliega_abajo_prosidebar "Documentos y plantillas", 
+        'ri-book-open-fill', nil do %>
+        <%= opcion_menu_prosidebar "Nube", heb412_gen.sisini_path,
           desplegable: true %>
         <% if can? :manage, ::Heb412Gen::Plantillahcm %>
-          <%= opcion_menu "Plantillas para listados en hojas de calculo",
+          <%= opcion_menu_prosidebar "Plantillas para listados en hojas de calculo",
             heb412_gen.plantillashcm_path,
           desplegable: true %>
         <% end %>
         <% if can? :manage, ::Heb412Gen::Plantillahcr %>
-          <%= opcion_menu "Plantillas para un registro en hoja de calculo",
+          <%= opcion_menu_prosidebar "Plantillas para un registro en hoja de calculo",
             heb412_gen.plantillashcr_path,
             desplegable: true %>
         <% end %>
       <% end %>
-      <%= despliega_abajo "Administrar" do %>
-        <%= opcion_menu "Clave y tema", main_app.editar_registro_usuario_path,
+      <%= despliega_abajo_prosidebar "Administrar", 
+        'ri-settings-4-fill', nil do %>
+        <%= opcion_menu_prosidebar "Clave y tema", main_app.editar_registro_usuario_path,
           desplegable: true %>
         <% if current_usuario.rol == Ability::ROLADMIN %>
-          <%= opcion_menu "Usuarios", main_app.usuarios_path,
+          <%= opcion_menu_prosidebar "Usuarios", main_app.usuarios_path,
             desplegable: true %>
         <% end %>
         <% if can? :manage, Mr519Gen::Formulario %>
-          <%= opcion_menu "Formularios", mr519_gen.formularios_path,
+          <%= opcion_menu_prosidebar "Formularios", mr519_gen.formularios_path,
             desplegable: true %>
         <% end %>
         <% if current_usuario.rol == Ability::ROLADMIN %>
-          <%= opcion_menu "Tablas Básicas", sip.tablasbasicas_path,
+          <%= opcion_menu_prosidebar "Tablas Básicas", sip.tablasbasicas_path,
             desplegable: true %>
         <% end %>
       <% end %>
-      <%= opcion_menu "Salir #{current_usuario.nusuario}", 
+      <%= opcion_menu_prosidebar "Salir #{current_usuario.nusuario}", 
         main_app.sign_out_path %>
     <% else %>
-      <%= opcion_menu "Acerca de", sip.acercade_path %>
-      <%= opcion_menu "Iniciar Sesión", main_app.new_usuario_session_path %> 
+      <%= opcion_menu_prosidebar "Acerca de", sip.acercade_path %>
+      <%= opcion_menu_prosidebar "Iniciar Sesión", main_app.new_usuario_session_path %> 
     <% end %>
   <% end %>
 <% end %>
@@ -83,4 +85,4 @@
     Desarrollado por <a id='pasosdeJesus' href="http://www.pasosdeJesus.org" target="_blank">Pasos de Jesús</a>. 2022. 
 <% end %>
 
-<%= render template: "layouts/sip/application" %>
+<%= render template: "layouts/sip/application-prosidebar" %>

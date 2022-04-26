@@ -159,6 +159,11 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
+css-pro-layout@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/css-pro-layout/-/css-pro-layout-1.1.0.tgz#741d62a01891d81ae24580dbc1427a8dade39420"
+  integrity sha512-rmz9qy33SVIsqBRdg6kpD31JWJJHrXvWITVgi5r4BxLuIRJD3NEKhK4588mWoLAI0P+yfxBM7TFWDm91p/pfhw==
+
 error-ex@^1.3.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/error-ex/-/error-ex-1.3.2.tgz#b4ac40648107fdcdcfae242f428bea8a14d4f1bf"

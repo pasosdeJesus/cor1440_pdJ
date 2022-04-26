@@ -9,7 +9,7 @@ Rails.start();
 window.Rails = Rails
 
 import './jquery'
-import '../../vendedor/recursos/javascripts/jquery-ui'
+import '../../vendor/assets/javascripts/jquery-ui'
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
@@ -30,7 +30,7 @@ import 'gridstack'
 import {AutocompletaAjaxExpreg} from '@pasosdejesus/autocompleta_ajax'
 window.AutocompletaAjaxExpreg = AutocompletaAjaxExpreg
 
-import inicializaProsidebar from '../../vendedor/javascript/prosidebar/index.js'
+import inicializaProsidebar from '../../vendor/javascript/prosidebar/index.js'
 window.inicializaProsidebar = inicializaProsidebar
 
 let esperarRecursosSprocketsYDocumento = function (resolver) {

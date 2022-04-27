@@ -2477,15 +2477,9 @@ CREATE TABLE public.sal7711_gen_articulo (
     pagina character varying(20),
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
+    anexo_id integer NOT NULL,
     texto text,
-    url character varying(5000),
-    adjunto_file_name character varying,
-    adjunto_content_type character varying,
-    adjunto_file_size bigint,
-    adjunto_updated_at timestamp(6) without time zone,
-    anexo_id_antiguo integer,
-    adjunto_descripcion character varying(1500),
-    pais_id integer
+    url character varying(5000)
 );
 
 
@@ -2528,9 +2522,7 @@ CREATE TABLE public.sal7711_gen_bitacora (
     ip character varying(100),
     usuario_id integer,
     operacion character varying(50),
-    detalle character varying(5000),
-    detalle2 character varying(500),
-    detalle3 character varying(500)
+    detalle character varying(5000)
 );
 
 
@@ -5817,14 +5809,6 @@ ALTER TABLE ONLY public.cor1440_gen_efecto_respuestafor
 
 
 --
--- Name: sal7711_gen_articulo fk_rails_97ebadca1b; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.sal7711_gen_articulo
-    ADD CONSTRAINT fk_rails_97ebadca1b FOREIGN KEY (pais_id) REFERENCES public.sip_pais(id);
-
-
---
 -- Name: sip_orgsocial_sectororgsocial fk_rails_9f61a364e0; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5902,6 +5886,14 @@ ALTER TABLE ONLY public.cor1440_gen_actividad_actividadpf
 
 ALTER TABLE ONLY public.cor1440_gen_anexo_efecto
     ADD CONSTRAINT fk_rails_bcd8d7b7ad FOREIGN KEY (anexo_id) REFERENCES public.sip_anexo(id);
+
+
+--
+-- Name: sal7711_gen_articulo fk_rails_bdb4c828f9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.sal7711_gen_articulo
+    ADD CONSTRAINT fk_rails_bdb4c828f9 FOREIGN KEY (anexo_id) REFERENCES public.sip_anexo(id);
 
 
 --
@@ -6482,11 +6474,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20151030181131'),
 ('20151201161053'),
 ('20160308213334'),
-('20160518025044'),
 ('20160519195544'),
-('20160802134021'),
 ('20160805103310'),
-('20160921112808'),
 ('20161009111443'),
 ('20161010152631'),
 ('20161026110802'),
@@ -6495,7 +6484,6 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20161103081041'),
 ('20161103083352'),
 ('20161108102349'),
-('20161212175928'),
 ('20170405104322'),
 ('20170413185012'),
 ('20170414035328'),

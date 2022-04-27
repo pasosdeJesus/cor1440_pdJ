@@ -1,0 +1,36 @@
+<% if @informe.filtroproyectofinanciero %>
+  <h2>Horas por Resultado</h2>
+  <table class='table table-bordered' border='1' width='100%'>
+    <tr>
+      <th>Resultado</th>
+      <th>Duración financiada JRS-Colombia</th>
+      <th>Duración financiada pdJ</th>
+    </tr>
+    <% shjrs = 0 %>
+    <% shpdJ = 0 %>
+    <% Cor1440Gen::Resultadopf.where(
+      proyectofinanciero_id: @informe.filtroproyectofinanciero).
+      order(:id).each do |rpf| %>
+      <% lac = @actividades.
+        where("cor1440_gen_actividad.id IN 
+              (SELECT actividad_id FROM cor1440_gen_actividad_actividadpf AS aa
+               JOIN cor1440_gen_actividadpf AS apf ON aa.actividadpf_id=apf.id
+               WHERE apf.resultadopf_id=?)", rpf.id).reorder(:fecha) %>
+     <% hjrs = lac.pluck(:duracion).select{|x| x!=nil}.sum %>
+     <% hpdJ = lac.pluck(:duracionvol).select{|x| x!=nil}.sum %>
+     <tr>
+       <td><%= rpf.resultado %></td>
+       <td><%= hjrs %></td>
+       <td><%= hpdJ %></td>
+     </tr>
+     <% shjrs += hjrs %>
+     <% shpdJ += hpdJ %>
+   <% end %>
+   <tr>
+     <th>Total</th>
+     <th><%= shjrs %></th>
+     <th><%= shpdJ %></th>
+   </tr>
+  </table>
+  <p></p>
+<% end %>

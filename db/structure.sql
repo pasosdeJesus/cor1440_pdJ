@@ -1852,6 +1852,39 @@ CREATE VIEW public.detalle3 AS
 
 
 --
+-- Name: heb412_gen_bloqueinfav; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_bloqueinfav (
+    id bigint NOT NULL,
+    informeavanzado_id integer NOT NULL,
+    bloque character varying(128) NOT NULL,
+    parametros character varying(512),
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: heb412_gen_bloqueinfav_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_bloqueinfav_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_bloqueinfav_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_bloqueinfav_id_seq OWNED BY public.heb412_gen_bloqueinfav.id;
+
+
+--
 -- Name: heb412_gen_campohc; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2063,6 +2096,40 @@ CREATE SEQUENCE public.heb412_gen_formulario_plantillahcr_id_seq
 --
 
 ALTER SEQUENCE public.heb412_gen_formulario_plantillahcr_id_seq OWNED BY public.heb412_gen_formulario_plantillahcr.id;
+
+
+--
+-- Name: heb412_gen_informeavanzado; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.heb412_gen_informeavanzado (
+    id bigint NOT NULL,
+    titulo character varying(256) NOT NULL COLLATE public.es_co_utf_8,
+    fechaini date,
+    fechafin date,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL,
+    proyectofinanciero_id integer
+);
+
+
+--
+-- Name: heb412_gen_informeavanzado_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.heb412_gen_informeavanzado_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: heb412_gen_informeavanzado_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.heb412_gen_informeavanzado_id_seq OWNED BY public.heb412_gen_informeavanzado.id;
 
 
 --
@@ -3785,6 +3852,13 @@ ALTER TABLE ONLY public.cor1440_gen_valorcampotind ALTER COLUMN id SET DEFAULT n
 
 
 --
+-- Name: heb412_gen_bloqueinfav id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_bloqueinfav ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_bloqueinfav_id_seq'::regclass);
+
+
+--
 -- Name: heb412_gen_campohc id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -3824,6 +3898,13 @@ ALTER TABLE ONLY public.heb412_gen_doc ALTER COLUMN id SET DEFAULT nextval('publ
 --
 
 ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcr ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_formulario_plantillahcr_id_seq'::regclass);
+
+
+--
+-- Name: heb412_gen_informeavanzado id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_informeavanzado ALTER COLUMN id SET DEFAULT nextval('public.heb412_gen_informeavanzado_id_seq'::regclass);
 
 
 --
@@ -4381,6 +4462,14 @@ ALTER TABLE ONLY public.sip_etiqueta
 
 
 --
+-- Name: heb412_gen_bloqueinfav heb412_gen_bloqueinfav_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_bloqueinfav
+    ADD CONSTRAINT heb412_gen_bloqueinfav_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: heb412_gen_campohc heb412_gen_campohc_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -4426,6 +4515,14 @@ ALTER TABLE ONLY public.heb412_gen_doc
 
 ALTER TABLE ONLY public.heb412_gen_formulario_plantillahcr
     ADD CONSTRAINT heb412_gen_formulario_plantillahcr_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: heb412_gen_informeavanzado heb412_gen_informeavanzado_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_informeavanzado
+    ADD CONSTRAINT heb412_gen_informeavanzado_pkey PRIMARY KEY (id);
 
 
 --
@@ -5745,6 +5842,14 @@ ALTER TABLE ONLY public.cor1440_gen_formulario_tipoindicador
 
 
 --
+-- Name: heb412_gen_bloqueinfav fk_rails_8aceaad600; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_bloqueinfav
+    ADD CONSTRAINT fk_rails_8aceaad600 FOREIGN KEY (informeavanzado_id) REFERENCES public.heb412_gen_informeavanzado(id);
+
+
+--
 -- Name: cor1440_gen_actividad_orgsocial fk_rails_8ba599a224; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5910,6 +6015,14 @@ ALTER TABLE ONLY public.cor1440_gen_informe
 
 ALTER TABLE ONLY public.sip_ubicacionpre
     ADD CONSTRAINT fk_rails_c08a606417 FOREIGN KEY (municipio_id) REFERENCES public.sip_municipio(id);
+
+
+--
+-- Name: heb412_gen_informeavanzado fk_rails_c39c4f9201; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.heb412_gen_informeavanzado
+    ADD CONSTRAINT fk_rails_c39c4f9201 FOREIGN KEY (proyectofinanciero_id) REFERENCES public.cor1440_gen_proyectofinanciero(id);
 
 
 --
@@ -6673,6 +6786,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220417221010'),
 ('20220420143020'),
 ('20220420154535'),
-('20220422190546');
+('20220422190546'),
+('20220427090110'),
+('20220427090332'),
+('20220427091844');
 
 

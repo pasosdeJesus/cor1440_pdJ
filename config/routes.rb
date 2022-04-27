@@ -24,6 +24,22 @@ Rails.application.routes.draw do
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
 
+    resources(
+      :informesavanzados, 
+      controller: 'heb412_gen/informesavanzados',
+      path_names: {new: 'nuevo', edit: 'edita'}
+    ) do
+      resources(
+        :bloquesinfav,
+        controller: 'heb412_gen/bloquesinfav',
+        path_names: {new: 'nuevo', edit: 'edita'}
+      ) do
+        member do
+          patch :mover
+        end
+      end
+    end
+
     root 'sip/hogar#index'
   end
   mount Sip::Engine, at: '/cor1440pdJ', as: 'sip'

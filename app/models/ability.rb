@@ -107,6 +107,14 @@ class Ability  < Cor1440Gen::Ability
       return
     end
     initialize_cor1440_gen(usuario)
+    case usuario.rol
+    when Ability::ROLOPERADOR
+      can :manage, Heb412Gen::Informeavanzado
+      can :manage, Heb412Gen::Bloqueinfav
+    when Ability::ROLADMIN
+      can :manage, Heb412Gen::Informeavanzado
+      can :manage, Heb412Gen::Bloqueinfav
+    end
   end
 
 end

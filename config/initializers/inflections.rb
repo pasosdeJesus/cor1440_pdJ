@@ -16,6 +16,7 @@
 # end
 
 ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'bloqueinfav', 'bloquesinfav'
   inflect.irregular 'informeavanzado', 'informesavanzados'
   inflect.irregular 'perfilorgsocial', 'perfilesorgsocial'
   inflect.irregular 'sectororgsocial', 'sectoresorgsocial'

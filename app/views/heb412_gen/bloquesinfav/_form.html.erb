@@ -1,0 +1,20 @@
+<% url = main_app.new_informeavanzado_bloqueinfav_path # main_app.informeavanzado_bloqueinfav_path(id: @bloqueinfav.id || Heb412Gen::Bloqueinfav.new ) %>
+<%= form_with(
+  model: [@bloqueinfav.informeavanzado, @bloqueinfav], 
+  url: url,
+  data: { 
+    turbo_frame: "bloquesinfav", 
+    turbo_action: "advance", 
+    controller: "form-bloqueinfav", 
+    action: "turbo:submit-end->form-bloqueinfav#reset"
+  }) do |formu| %>
+
+  <div class='row'>
+    <div class='col-md-3'>
+      <%= formu.text_field :bloque %>
+    </div>
+    <div class='col-md-3'>
+      <%= formu.text_field :parametros%>
+    </div>
+  </div>
+<% end %>

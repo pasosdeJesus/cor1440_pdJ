@@ -1,0 +1,21 @@
+<h3>Bloques</h3>
+<div class="row" >
+  <div class="col-md-3">
+    <h5>Bloque</h5>
+  </div>
+  <div class="col-md-3">
+    <h5>Parámetros</h5>
+  </div>
+</div>
+<turbo-frame id="bloquesinfav" 
+             data-controller="drag" 
+             data-drag-url="bloquesinfav/:id/mover">
+  <%= render @informeavanzado.bloqueinfav.order(posicion: :asc) %>
+</turbo-frame>
+<div id="nuevo_bloqueinfav">
+  <%= turbo_frame_tag "nuevo_bloqueinfav", 
+    src: main_app.new_informeavanzado_bloqueinfav_path(@informeavanzado), 
+    target: "_top" 
+  %>
+</div>
+

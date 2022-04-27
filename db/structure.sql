@@ -1860,6 +1860,7 @@ CREATE TABLE public.heb412_gen_bloqueinfav (
     informeavanzado_id integer NOT NULL,
     bloque character varying(128) NOT NULL,
     parametros character varying(512),
+    posicion integer,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );

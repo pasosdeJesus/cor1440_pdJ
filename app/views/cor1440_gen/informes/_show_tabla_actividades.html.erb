@@ -1,0 +1,30 @@
+<% if @informe.filtroproyectofinanciero %>
+  <h2>Listado de <%= @actividades.count %> actividades</h2>
+  <table class='table table-bordered table-striped' border='1' width='100%'>
+    <tr>
+      <th>Fecha</th>
+      <th>Responsable</th>
+      <th>Descripción</th>
+      <th>Duración</th>
+      <th>Duración voluntaria</th>
+    </tr>
+    <% shjrs = 0 %>
+    <% shpdJ = 0 %>
+    <% @actividades.order(:fecha).each do |ac| %>
+      <tr>
+        <td><%= ac.fecha %></td>
+        <td><%= ac.responsable.nusuario %></td>
+        <td><%= ac.nombre %></td>
+        <td><%= ac.duracion.a_decimal_localizado %></td>
+        <td><%= ac.duracionvol.a_decimal_localizado %></td>
+      </tr>
+     <% shjrs += (ac.duracion || 0) %>
+     <% shpdJ += (ac.duracionvol || 0) %>
+   <% end %>
+   <tr>
+     <th colspan='3'>Total</th>
+     <th><%= shjrs.a_decimal_localizado %></th>
+     <th><%= shpdJ.a_decimal_localizado %></th>
+   </tr>
+  </table>
+<% end %>

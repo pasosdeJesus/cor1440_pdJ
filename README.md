@@ -14,8 +14,8 @@ Sistema para manejar convenios y actividades en Pasos de Jesús
 
 ### Arquitectura
 
-Es una aplicación que emplea el motor genérico estilo Pasos de Jesús ```sip```
-Ver https://github.com/pasosdeJesus/sip
+Es una aplicación que emplea el motor genérico estilo Pasos de Jesús ```msip```
+Ver https://github.com/pasosdeJesus/msip
 y el motor cor1440_gen, ver https://github.com/pasosdeJesus/cor1440_gen
 
 ## Uso

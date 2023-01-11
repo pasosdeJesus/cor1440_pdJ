@@ -1,7 +1,7 @@
 module Heb412Gen
   class Informeavanzado < ActiveRecord::Base
-    include Sip::Modelo
-    include Sip::Localizacion
+    include Msip::Modelo
+    include Msip::Localizacion
 
     belongs_to :proyectofinanciero, 
       class_name: 'Cor1440Gen::Proyectofinanciero',

@@ -1,5 +1,5 @@
-require 'sip/application_controller'
-class ApplicationController < Sip::ApplicationController
+require 'msip/application_controller'
+class ApplicationController < Msip::ApplicationController
 
   # Sin definicion de autorizacion por ser utilidad
 

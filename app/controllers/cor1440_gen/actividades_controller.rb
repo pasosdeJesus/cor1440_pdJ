@@ -79,11 +79,11 @@ module Cor1440Gen
               :id, :proyectofinanciero_id, :_destroy,
               :actividadpf_ids => []
             ],
-            :actividad_sip_anexo_attributes => [
+            :actividad_msip_anexo_attributes => [
               :id,
               :id_actividad, 
               :_destroy,
-              :sip_anexo_attributes => [
+              :msip_anexo_attributes => [
                 :id, :descripcion, :adjunto, :_destroy
               ]
             ],

@@ -53,7 +53,7 @@ let promesaRecursosSprocketsYDocumento = new Promise((resolver, rechazar) => {
 promesaRecursosSprocketsYDocumento.then((mensaje) => {
   console.log('Cargando recursos sprockets')
   var root = window;
-  sip_prepara_eventos_comunes(root, '/cor1440pdJ');
+  msip_prepara_eventos_comunes(root, '/cor1440pdJ');
   mr519_gen_prepara_eventos_comunes(root);
   heb412_gen_prepara_eventos_comunes(root);
   cor1440_gen_prepara_eventos_comunes(root);
@@ -73,7 +73,7 @@ document.addEventListener('turbo:load', (e) => {
 
   console.log('Escuchador turbo:load')
 
-  sip_ejecutarAlCargarPagina(window)
+  msip_ejecutarAlCargarPagina(window)
   window.inicializaProsidebar()
 })
 

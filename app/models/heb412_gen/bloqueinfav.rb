@@ -1,7 +1,7 @@
 module Heb412Gen
   class Bloqueinfav < ActiveRecord::Base
-    include Sip::Modelo
-    include Sip::Localizacion
+    include Msip::Modelo
+    include Msip::Localizacion
 
     belongs_to :informeavanzado, 
       class_name: 'Heb412Gen::Informeavanzado',

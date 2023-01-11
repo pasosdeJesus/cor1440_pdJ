@@ -1,5 +1,5 @@
 module Heb412Gen
-  class BloquesinfavController < Sip::ModelosController
+  class BloquesinfavController < Msip::ModelosController
     helper ::ApplicationHelper
 
     before_action :set_bloqueinfav, 

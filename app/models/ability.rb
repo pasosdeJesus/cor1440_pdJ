@@ -101,7 +101,7 @@ class Ability  < Cor1440Gen::Ability
       merge(CAMPOS_PLANTILLAS_PROPIAS.clone)
   end
 
-  # Ver documentacion de este metodo en app/models/ability de sip
+  # Ver documentacion de este metodo en app/models/ability de msip
   def initialize(usuario = nil)
     if !usuario || usuario.fechadeshabilitacion
       return

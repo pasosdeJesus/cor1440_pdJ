@@ -1,5 +1,5 @@
 module Heb412Gen
-  class InformesavanzadosController < Sip::ModelosController
+  class InformesavanzadosController < Msip::ModelosController
     helper ::ApplicationHelper
 
     before_action :set_informeavanzado, 

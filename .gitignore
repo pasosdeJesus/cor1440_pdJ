@@ -32,7 +32,7 @@ tmp/
 app/views/redirige/index.html
 public/act/assets/
 archivo/
-config/initializers/sip.rb
+config/initializers/msip.rb
 herram/
 .env
 *#
@@ -58,5 +58,7 @@ config/credentials.yml.enc
 public/assets/
 public/heb412/Documentos/
 app/assets/builds/
-app/views/sip/hogar/_local.html.erb
-app/javascript/controllers/sip
+app/views/msip/hogar/_local.html.erb
+app/javascript/controllers/msip
+cobertura-sistema/
+cobertura-unitarias/

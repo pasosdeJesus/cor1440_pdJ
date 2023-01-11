@@ -25,7 +25,7 @@ module Cor1440pdJ
 
     config.active_record.schema_format = :sql
 
-    #config.railties_order = [:main_app, Sip::Engine, :all]
+    #config.railties_order = [:main_app, Msip::Engine, :all]
 
     config.x.heb412_ruta = Pathname(
       ENV.fetch('HEB412_RUTA', Rails.root.join('public', 'heb412').to_s)

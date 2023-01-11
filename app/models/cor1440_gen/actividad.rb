@@ -3,7 +3,7 @@ require 'cor1440_gen/concerns/models/actividad'
 module Cor1440Gen
   class Actividad < ActiveRecord::Base
     include Cor1440Gen::Concerns::Models::Actividad
-    include Sip::Localizacion
+    include Msip::Localizacion
 
     attr_accessor :valor
     attr_accessor :horas
@@ -60,7 +60,7 @@ module Cor1440Gen
     def presenta(atr)
       case atr.to_s
       when 'medduracion'
-        Sip::ModeloHelper.etiqueta_coleccion(
+        Msip::ModeloHelper.etiqueta_coleccion(
           ::ApplicationHelper::DURACION, medduracion)
       when 'nombreurlcaso' 
         u = ''
@@ -84,21 +84,21 @@ module Cor1440Gen
 
     scope :filtro_fecha_localizadaini, lambda { |f|
       where('fecha >= ?', 
-            Sip::FormatoFechaHelper.fecha_local_estandar(f))
+            Msip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
     scope :filtro_fecha_localizadafin, lambda { |f|
       where('fecha <= ?', 
-            Sip::FormatoFechaHelper.fecha_local_estandar(f))
+            Msip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
     scope :filtro_fecharepini, lambda { |f|
-      where('fecharep >= ?', Sip::FormatoFechaHelper.fecha_local_estandar(f))
+      where('fecharep >= ?', Msip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
     scope :filtro_fecharepfin, lambda { |f|
       where('fecharep <= ?', 
-            Sip::FormatoFechaHelper.fecha_local_estandar(f))
+            Msip::FormatoFechaHelper.fecha_local_estandar(f))
     }
 
     scope :filtro_nombreurlcaso, lambda { |n|

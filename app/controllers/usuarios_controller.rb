@@ -1,6 +1,6 @@
 require 'cor1440_gen/concerns/controllers/usuarios_controller'
 
-class UsuariosController < Sip::ModelosController
+class UsuariosController < Msip::ModelosController
 
   # Sin definicion de autorización por ser requerida por no autenticados
 

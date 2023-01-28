@@ -69,10 +69,11 @@
         <% end %>
       <% end %>
       <%= opcion_menu_prosidebar "Salir #{current_usuario.nusuario}", 
-        main_app.sign_out_path %>
+        main_app.terminar_sesion_path %>
     <% else %>
       <%= opcion_menu_prosidebar "Acerca de", msip.acercade_path %>
-      <%= opcion_menu_prosidebar "Iniciar Sesión", main_app.new_usuario_session_path %> 
+      <%= opcion_menu_prosidebar "Iniciar Sesión", 
+        main_app.iniciar_sesion_path %> 
     <% end %>
   <% end %>
 <% end %>

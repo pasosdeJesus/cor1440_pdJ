@@ -12,3 +12,9 @@ application.register("msip--cancelar-vacio-es-eliminar", Msip__CancelarVacioEsEl
 
 import Msip__SindocautController from "./msip/sindocaut_controller"
 application.register("msip--sindocaut", Msip__SindocautController)
+
+import Sip__CancelarVacioEsEliminarController from "./sip/cancelar_vacio_es_eliminar_controller"
+application.register("sip--cancelar-vacio-es-eliminar", Sip__CancelarVacioEsEliminarController)
+
+import Sip__SindocautController from "./sip/sindocaut_controller"
+application.register("sip--sindocaut", Sip__SindocautController)

@@ -1618,7 +1618,8 @@ CREATE TABLE public.cor1440_gen_proyectofinanciero (
     montoej double precision,
     aportepropioej double precision,
     aporteotrosej double precision,
-    presupuestototalej double precision
+    presupuestototalej double precision,
+    idrep_gitlab integer
 );
 
 
@@ -7240,6 +7241,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20230127041839'),
 ('20230127123623'),
 ('20230301145222'),
-('20230301212546');
+('20230301212546'),
+('20230307151628');
 
 

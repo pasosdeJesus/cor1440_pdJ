@@ -14,8 +14,9 @@ module Cor1440Gen
 
 
     def proyectofinanciero_params
+      l = proyectofinanciero_params_cor1440_gen + [:idrep_gitlab]
       params.require(:proyectofinanciero).permit(
-        proyectofinanciero_params_cor1440_gen.map {|e|
+        l.map {|e|
           e.class == Hash && e[:actividadpf_attributes] ?
             {:actividadpf_attributes =>  [
               :actividadtipo_id,

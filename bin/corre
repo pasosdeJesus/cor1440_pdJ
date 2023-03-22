@@ -103,7 +103,7 @@ FileUtils.chdir RAIZ_AP do
     end
     puts "#{ord}"
   elsif ENV['RAILS_ENV'] == 'production'
-    if File.exists?('bin/corre-local')
+    if File.exist?('bin/corre-local')
       system!('bin/corre-local')
     end
     if !File.exist?("/etc/rc.d/#{ENV['RC']}")

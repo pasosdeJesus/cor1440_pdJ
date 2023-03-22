@@ -90,9 +90,9 @@ ansi-styles@^3.2.1:
     color-convert "^1.9.0"
 
 apexcharts@^3.28.1:
-  version "3.37.1"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.37.1.tgz#50443d302fc7fc72aace9c6c4074baae017c6950"
-  integrity sha512-fmQ5Updeb/LASl+S1+mIxXUFxzY0Fa7gexfCs4o+OPP9f2NEBNjvybOtPrah44N4roK7U5o5Jis906QeEQu0cA==
+  version "3.37.2"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.37.2.tgz#ade373bda05b2041ae61aaaa2579529b0a0dad10"
+  integrity sha512-BE5+WgIjnJgLlNPiIVqH47mzhSeSHfzg5jMUN1PVZ3fxM6ZL8WEB6aaNAh0l3c9K6PitimWo7xho48Zp7mBG2w==
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"
@@ -393,9 +393,9 @@ jquery-ui@^1.13.2:
     jquery ">=1.8.0 <4.0.0"
 
 "jquery@>=1.7.1 <4.0.0", "jquery@>=1.8.0 <4.0.0", "jquery@^1.8 || 2 || 3", jquery@^3.6.0:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.3.tgz#23ed2ffed8a19e048814f13391a19afcdba160e6"
-  integrity sha512-bZ5Sy3YzKo9Fyc8wH2iIQK4JImJ6R0GWI9kL1/k7Z91ZBNgkRXE6U0JfHIizZbort8ZunhSI3jw9I6253ahKfg==
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.4.tgz#ba065c188142100be4833699852bf7c24dc0252f"
+  integrity sha512-v28EW9DWDFpzcD9O5iyJXg3R3+q+mET5JhnjJzQUZMHOv67bpSIHq81GEYpPNZHG+XXHsfSme3nxp/hndKEcsQ==
 
 js-tokens@^4.0.0:
   version "4.0.0"

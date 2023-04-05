@@ -18,10 +18,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 61c866dabc9a645d120fb8149c631513f6176be1
-  branch: main
+  revision: 2a069da871ead3a031082732c58703f90e0ca7af
+  branch: conv2
   specs:
-    cor1440_gen (2.2.0.beta1)
+    cor1440_gen (2.2.0.beta2)
       devise
       heb412_gen
       kt-paperclip
@@ -31,10 +31,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 62c5c8f94e9edf167d27c3ee940361c0a644e320
-  branch: main
+  revision: 4face5f255e8cad917567cd2b1ae67f256958fe4
+  branch: conv2
   specs:
-    heb412_gen (2.2.0.beta1)
+    heb412_gen (2.2.0.beta2)
       mr519_gen
       msip
       redcarpet
@@ -42,19 +42,19 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 4addd31d8762753879f16a9ca4c66a4e3f0da2ea
-  branch: main
+  revision: 081cddb10db3dfbb404483e3d3a86db26ef25141
+  branch: conv2
   specs:
-    mr519_gen (2.2.0.beta1)
+    mr519_gen (2.2.0.beta2)
       msip
       rails
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 523386e8531dfd9d0731ff3e96b57e109f64b1ae
-  branch: main
+  revision: 50a990e10869299e6898fffe761191ec397ca0b4
+  branch: conv2
   specs:
-    msip (2.2.0.beta1)
+    msip (2.2.0.beta2)
       cancancan (~> 3)
       devise (~> 4)
       devise-i18n (~> 1)
@@ -137,7 +137,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.2)
+    addressable (2.8.3)
       public_suffix (>= 2.0.2, < 6.0)
     andand (1.3.3)
     apexcharts (0.2.0)
@@ -341,9 +341,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.28.0)
       parser (>= 3.2.1.0)
-    rubocop-minitest (0.29.0)
+    rubocop-minitest (0.30.0)
       rubocop (>= 1.39, < 2.0)
-    rubocop-rails (2.18.0)
+    rubocop-rails (2.19.0)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)

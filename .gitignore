@@ -62,3 +62,6 @@ app/views/msip/hogar/_local.html.erb
 app/javascript/controllers/msip
 cobertura-sistema/
 cobertura-unitarias/
+public/heb412/generados/
+ref
+*.cp

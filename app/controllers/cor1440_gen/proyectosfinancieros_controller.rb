@@ -12,6 +12,12 @@ module Cor1440Gen
       only: [:new, :create, :destroy, :edit, :update, :index, :show,
              :objetivospf]
 
+    def actualizar_de_gitlab
+      set_proyectofinanciero
+      if @registro
+
+      end
+    end
 
     def proyectofinanciero_params
       l = proyectofinanciero_params_cor1440_gen + [:idrep_gitlab]

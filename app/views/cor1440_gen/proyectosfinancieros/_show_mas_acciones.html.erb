@@ -1,10 +1,10 @@
 <div class='col-sm-3'>
   <%= link_to t('Crear copia'),
-    cor1440_gen.copia_proyectofinanciero_path( @registro), 
+    cor1440_gen.copia_proyectofinanciero_path( @registro),
     class: 'btn btn-sm' %>
 </div>
 <div class='col-sm-3'>
-  <%= link_to t('Actualizar de gitlab''),
-    actualizar_de_gitlab( @registro.id ), 
+  <%= link_to t('Actualizar de gitlab'),
+    main_app.actualizar_de_gitlab_path( @registro.id ),
     class: 'btn btn-sm' %>
 </div>

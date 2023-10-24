@@ -30,9 +30,9 @@ Rails.application.routes.draw do
     end
     resources :usuarios, path_names: { new: 'nuevo', edit: 'edita' } 
 
-#    get 'proyectofinanciero/:id/actualizar_de_gitlab' => 
-#      'cor1440_gen/proyectosfinancieros',
-#        as: 'actualizar_de_gitlab'
+    get 'proyectofinanciero/:id/actualizar_de_gitlab' => 
+      'cor1440_gen/proyectosfinancieros#actualizar_de_gitlab',
+      as: 'actualizar_de_gitlab'
 
 
     resources(

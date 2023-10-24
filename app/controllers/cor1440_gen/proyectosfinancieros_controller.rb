@@ -15,8 +15,9 @@ module Cor1440Gen
     def actualizar_de_gitlab
       set_proyectofinanciero
       if @registro
-
+        GitlabHelper.actualizar_de_gitlab(@registro.id)
       end
+      redirect_to cor1440_gen.actividades_path
     end
 
     def proyectofinanciero_params

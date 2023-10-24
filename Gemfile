@@ -29,7 +29,9 @@ gem "kt-paperclip",                 # Anexos
 
 gem "libxml-ruby"
 
-gem "nokogiri", ">=1.11.1"
+gem 'net-http'
+
+gem 'nokogiri'
 
 gem "odf-report" # Genera ODT
 

@@ -57,6 +57,9 @@ module Cor1440Gen
         @horas = c.inject(0) { |memo,r|
           r.horas ? memo + r.horas : memo
         }
+        @horasvol = c.inject(0) { |acum,r|
+          r.horasvol ? acum + r.horasvol : acum
+        }
         @valor = c.inject(0) { |memo,r|
           r.valor ? memo + r.valor : memo
         }

@@ -27,6 +27,22 @@ module Cor1440Gen
         end
     end
 
+    def horasvol
+        case medduracion
+        when 'I'
+          duracionvol/60.0
+        when 'H'
+          duracionvol
+        when 'D'
+          duracionvol*8
+        when 'M'
+          duracionvol*8*25
+        else
+          0
+        end
+    end
+
+
     def valor
       if duracion && duracion > 0 && medduracion &&
         proyectofinanciero.count == 1 && 

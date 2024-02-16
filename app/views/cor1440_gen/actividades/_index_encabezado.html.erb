@@ -8,11 +8,14 @@
         %>
     <% end %>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-2">
     <%= titulo %>: <span id="numregistros"><%= @registros.count %></span>
   </div>
-  <div class="offset-sm-0 col-sm-3">
+  <div class="offset-sm-0 col-sm-2">
     Horas: <%= @horas %>
+  </div>
+  <div class="offset-sm-0 col-sm-2">
+    Horas voluntarias: <%= @horasvol %>
   </div>
   <div class="offset-sm-0 col-sm-3">
     Valor: <%= @valor %>

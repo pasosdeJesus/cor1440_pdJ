@@ -3184,6 +3184,42 @@ ALTER SEQUENCE public.msip_etiqueta_persona_id_seq OWNED BY public.msip_etiqueta
 
 
 --
+-- Name: msip_etnia; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.msip_etnia (
+    id bigint NOT NULL,
+    nombre character varying(500) NOT NULL COLLATE public.es_co_utf_8,
+    descripcion character varying(1000),
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL,
+    CONSTRAINT etnia_check CHECK (((fechadeshabilitacion IS NULL) OR (fechadeshabilitacion >= fechacreacion)))
+);
+
+
+--
+-- Name: msip_etnia_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.msip_etnia_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: msip_etnia_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.msip_etnia_id_seq OWNED BY public.msip_etnia.id;
+
+
+--
 -- Name: msip_fuenteprensa; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -3674,6 +3710,7 @@ CREATE TABLE public.msip_persona (
     departamento_id integer,
     municipio_id integer,
     centropoblado_id integer,
+    etnia_id integer DEFAULT 1 NOT NULL,
     CONSTRAINT persona_check CHECK (((dianac IS NULL) OR (((dianac >= 1) AND (((mesnac = 1) OR (mesnac = 3) OR (mesnac = 5) OR (mesnac = 7) OR (mesnac = 8) OR (mesnac = 10) OR (mesnac = 12)) AND (dianac <= 31))) OR (((mesnac = 4) OR (mesnac = 6) OR (mesnac = 9) OR (mesnac = 11)) AND (dianac <= 30)) OR ((mesnac = 2) AND (dianac <= 29))))),
     CONSTRAINT persona_mesnac_check CHECK (((mesnac IS NULL) OR ((mesnac >= 1) AND (mesnac <= 12)))),
     CONSTRAINT persona_sexo_check CHECK (((sexo = 'S'::bpchar) OR (sexo = 'F'::bpchar) OR (sexo = 'M'::bpchar)))
@@ -4681,6 +4718,13 @@ ALTER TABLE ONLY public.msip_etiqueta_persona ALTER COLUMN id SET DEFAULT nextva
 
 
 --
+-- Name: msip_etnia id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_etnia ALTER COLUMN id SET DEFAULT nextval('public.msip_etnia_id_seq'::regclass);
+
+
+--
 -- Name: msip_fuenteprensa id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -5429,6 +5473,14 @@ ALTER TABLE ONLY public.msip_etiqueta
 
 
 --
+-- Name: msip_etnia msip_etnia_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_etnia
+    ADD CONSTRAINT msip_etnia_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: msip_fuenteprensa msip_fuenteprensa_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -5884,6 +5936,13 @@ CREATE INDEX index_msip_orgsocial_on_grupoper_id ON public.msip_orgsocial USING 
 --
 
 CREATE INDEX index_msip_orgsocial_on_pais_id ON public.msip_orgsocial USING btree (pais_id);
+
+
+--
+-- Name: index_msip_persona_on_etnia_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_msip_persona_on_etnia_id ON public.msip_persona USING btree (etnia_id);
 
 
 --
@@ -7109,6 +7168,14 @@ ALTER TABLE ONLY public.cor1440_gen_plantillahcm_proyectofinanciero
 
 
 --
+-- Name: msip_persona fk_rails_d5b92f1c45; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.msip_persona
+    ADD CONSTRAINT fk_rails_d5b92f1c45 FOREIGN KEY (etnia_id) REFERENCES public.msip_etnia(id);
+
+
+--
 -- Name: cor1440_gen_informe fk_rails_daf0af8605; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -7483,6 +7550,11 @@ ALTER TABLE ONLY public.usuario
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240221002426'),
+('20240220164637'),
+('20240220111410'),
+('20240219221519'),
+('20240219220944'),
 ('20231208162022'),
 ('20231205205600'),
 ('20231205205549'),

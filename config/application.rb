@@ -27,6 +27,8 @@ module Cor1440pdJ
 
     #config.railties_order = [:main_app, Msip::Engine, :all]
 
+    config.relative_url_root = ENV.fetch('RUTA_RELATIVA', '/cor1440')
+
     config.x.heb412_ruta = Pathname(
       ENV.fetch('HEB412_RUTA', Rails.root.join('public', 'heb412').to_s)
     )

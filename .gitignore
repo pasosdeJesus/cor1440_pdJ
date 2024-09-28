@@ -60,6 +60,8 @@ public/heb412/Documentos/
 app/assets/builds/
 app/views/msip/hogar/_local.html.erb
 app/javascript/controllers/msip
+app/javascript/controllers/heb412_gen
+app/javascript/controllers/mr519_gen
 app/javascript/controllers/cor1440_gen
 cobertura-sistema/
 cobertura-unitarias/

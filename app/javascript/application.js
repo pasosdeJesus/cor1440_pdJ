@@ -20,6 +20,20 @@ import 'chosen-js/chosen.jquery';       // Cuadros de seleccion potenciados
 import 'bootstrap-datepicker'
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'
 
+
+import Msip__Motor from "./controllers/msip/motor"
+window.Msip__Motor = Msip__Motor
+Msip__Motor.iniciar()
+import Mr519Gen__Motor from "./controllers/mr519_gen/motor"
+window.Mr519Gen__Motor = Mr519Gen__Motor
+Mr519Gen__Motor.iniciar()
+import Heb412Gen__Motor from "./controllers/heb412_gen/motor"
+window.Heb412Gen__Motor = Heb412Gen__Motor
+Heb412Gen__Motor.iniciar()
+import Cor1440Gen__Motor from "./controllers/cor1440_gen/motor"
+window.Cor1440Gen__Motor = Cor1440Gen__Motor
+Cor1440Gen__Motor.iniciar()
+
 import ApexCharts from 'apexcharts'
 window.ApexCharts = ApexCharts
 import apexes from 'apexcharts/dist/locales/es.json'
@@ -61,6 +75,11 @@ promesaRecursosSprocketsYDocumento.then((mensaje) => {
   heb412_gen_prepara_eventos_comunes(root);
   cor1440_gen_prepara_eventos_comunes(root);
 
+  Msip__Motor.ejecutarAlCargarDocumentoYRecursos()
+  Mr519Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
+  Heb412Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
+  Cor1440Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
+
   formato_fecha = 'dd/M/yyyy'
   if ($('meta[name=formato_fecha]').length != 0) {
     formato_fecha = $('meta[name=formato_fecha]').attr('content')
@@ -76,8 +95,12 @@ document.addEventListener('turbo:load', (e) => {
 
   console.log('Escuchador turbo:load')
 
-  msip_ejecutarAlCargarPagina(window) // Establece root.puntomontaje 
+  msip_ejecutarAlCargarPagina(window) // Establece root.puntomontaje
   Msip__Motor.ejecutarAlCargarPagina()
+  Mr519Gen__Motor.ejecutarAlCargarPagina()
+  Heb412Gen__Motor.ejecutarAlCargarPagina()
+  Cor1440Gen__Motor.ejecutarAlCargarPagina()
+
   window.inicializaProsidebar()
 })
 

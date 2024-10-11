@@ -2,7 +2,6 @@
 
 console.log('Hola Mundo desde ESM')
 
-
 import Rails from "@rails/ujs";
 if (typeof window.Rails == 'undefined') { 
   Rails.start();
@@ -12,14 +11,20 @@ if (typeof window.Rails == 'undefined') {
 import "@hotwired/turbo-rails";
 
 import './jquery'
-import '../../vendor/assets/javascripts/jquery-ui'
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
-import 'chosen-js/chosen.jquery';       // Cuadros de seleccion potenciados
-import 'bootstrap-datepicker'
-import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'
 
+import TomSelect from 'tom-select';
+window.TomSelect = TomSelect; 
+window.configuracionTomSelect = {
+  create: false,
+  diacritics: true, //no sensitivo a acentos
+  sortField: {
+    field: "text",
+    direction: "asc"
+  }
+}
 
 import Msip__Motor from "./controllers/msip/motor"
 window.Msip__Motor = Msip__Motor

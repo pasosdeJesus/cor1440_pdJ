@@ -51,7 +51,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 744afb716fd9b1ed444f4071ec8b08d3428008db
+  revision: 7989958bcbc44605c27aa629171fd6f3aaf5bbab
   branch: main
   specs:
     msip (2.3.0.alfa2)
@@ -478,7 +478,7 @@ GEM
     will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.18)
+    zeitwerk (2.7.0)
 
 PLATFORMS
   aarch64-linux

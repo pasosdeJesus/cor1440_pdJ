@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 4cf7b80443506733fff8635fa4dd2fd2f07a7630
+  revision: ddfc18abd683873896252330e3c839ef1cf955c5
   branch: main
   specs:
     cor1440_gen (2.2.0.beta6)
@@ -31,7 +31,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: 731c20a491c622123f7b7990d7c5103b2a8a7ff9
+  revision: 597d8d560bdaf73bfc5aa2a3a0bad9403755530f
   branch: main
   specs:
     heb412_gen (2.3.0.alfa2)
@@ -42,7 +42,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 8dd29640445450ea9958ad9a6e3fb067299854ad
+  revision: 104141b8ef222fbd64d270a1a7d0469554f84816
   branch: main
   specs:
     mr519_gen (2.3.0.alfa2)
@@ -51,7 +51,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 12574b5c700a9af702969fa0e42264d3e1daa9ca
+  revision: 744afb716fd9b1ed444f4071ec8b08d3428008db
   branch: main
   specs:
     msip (2.3.0.alfa2)
@@ -257,13 +257,14 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
-    mime-types (3.5.2)
+    mime-types (3.6.0)
+      logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.0903)
+    mime-types-data (3.2024.1001)
     mini_mime (1.1.5)
     mini_portile2 (2.8.7)
     minitest (5.25.1)
-    msgpack (1.7.2)
+    msgpack (1.7.3)
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
@@ -376,7 +377,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.3.7)
+    rexml (3.3.8)
     rspreadsheet (0.5.3)
       andand (>= 1.3)
       rubyzip (>= 1.3)
@@ -549,4 +550,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.5.20
+   2.5.21

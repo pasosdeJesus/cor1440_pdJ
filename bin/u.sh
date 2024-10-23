@@ -1,7 +1,7 @@
 #!/bin/sh
 # Arranca con unicorn --suponiendo que ya se ejecutaron otras labores
 #   necesarias para ejecutar como instalar gemas, generar recursos, 
-#   actualizar indices, etc.  Ver bin/corre
+#   actualizar índices, etc.  Ver bin/corre
 
 if (test "${DIRAP}" = "") then {
   echo "Definir directorio de la aplicación en DIRAP"
@@ -34,16 +34,20 @@ if (test "$?" != "0") then {
 
 $DOAS su - ${USUARIO_AP} -c "cd $DIRAP; 
   echo \"== Iniciando unicorn... ==\"; 
-  ${defuroot} PUERTOUNICORN=${PUERTOUNICORN} CONFIG_HOSTS=${CONFIG_HOSTS}\
-    DIRAP=$DIRAP RAILS_ENV=production SECRET_KEY_BASE=${SECRET_KEY_BASE} \
-    BD_CLAVE=${BD_CLAVE} BD_USUARIO=${BD_USUARIO} \
-    BD_PRO=${BD_PRO} \
-    HEB412_RUTA=${HEB412_RUTA} \
+  ${defuroot} BD_CLAVE='${BD_CLAVE}' \
+    BD_PRO=\"${BD_PRO}\" \
+    BD_USUARIO=\"${BD_USUARIO}\" \
+    CONFIG_HOSTS=\"${CONFIG_HOSTS}\" \
+    DIRAP=\"${DIRAP}\" \
+    HEB412_RUTA=\"${HEB412_RUTA}\" \
+    PUERTOUNICORN=\"${PUERTOUNICORN}\" \
+    RAILS_ENV=production \
+    RUTA_RELATIVA=\"${RUTA_RELATIVA}\" \
+    SECRET_KEY_BASE=\"${SECRET_KEY_BASE}\" \
     MSIP_FORMATO_FECHA=\"${MSIP_FORMATO_FECHA}\" \
     MSIP_RUTA_ANEXOS=\"${MSIP_RUTA_ANEXOS}\" \
     MSIP_RUTA_VOLCADOS=\"${MSIP_RUTA_VOLCADOS}\" \
     MSIP_TITULO=\"${MSIP_TITULO}\" \
-    RUTA_RELATIVA=${RUTA_RELATIVA} \
     bundle exec /usr/local/bin/unicorn_rails \
-    -c $DIRAP/config/unicorn.conf.minimal.rb  -E production -D"
+      -c ${DIRAP}/config/unicorn.conf.minimal.rb  -E production -D"
 

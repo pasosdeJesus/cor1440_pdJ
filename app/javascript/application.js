@@ -75,10 +75,7 @@ let promesaRecursosSprocketsYDocumento = new Promise((resolver, rechazar) => {
 
 promesaRecursosSprocketsYDocumento.then((mensaje) => {
   console.log('Cargando recursos sprockets')
-  msip_prepara_eventos_comunes(window, '/cor1440pdJ');
   Mr519Gen__Motor.prepararEventosComunes(window);
-  heb412_gen_prepara_eventos_comunes(window);
-  cor1440_gen_prepara_eventos_comunes(window);
 
   Msip__Motor.ejecutarAlCargarDocumentoYRecursos()
   Mr519Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
@@ -100,7 +97,6 @@ document.addEventListener('turbo:load', (e) => {
 
   console.log('Escuchador turbo:load')
 
-  msip_ejecutarAlCargarPagina(window) // Establece window.puntoMontaje
   Msip__Motor.ejecutarAlCargarPagina()
   Mr519Gen__Motor.ejecutarAlCargarPagina()
   Heb412Gen__Motor.ejecutarAlCargarPagina()

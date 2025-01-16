@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 391d8fd62190f087a9ff38bfb89a717850047f91
+  revision: d2999eee00e802e0657482a769ec93d5113d3154
   branch: main
   specs:
     cor1440_gen (2.3.0.alfa3)
@@ -400,9 +400,8 @@ GEM
     timeout (0.4.3)
     ttfunk (1.8.0)
       bigdecimal (~> 3.1)
-    turbo-rails (1.5.0)
+    turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
-      activejob (>= 6.0.0)
       railties (>= 6.0.0)
     twitter_cldr (6.12.1)
       camertron-eprun
@@ -497,4 +496,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.6.2
+   2.6.3

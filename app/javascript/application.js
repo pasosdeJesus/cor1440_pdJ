@@ -14,6 +14,7 @@ import './jquery'
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
+window.bootstrap = bootstrap
 
 import TomSelect from 'tom-select';
 window.TomSelect = TomSelect; 
@@ -74,11 +75,10 @@ let promesaRecursosSprocketsYDocumento = new Promise((resolver, rechazar) => {
 
 promesaRecursosSprocketsYDocumento.then((mensaje) => {
   console.log('Cargando recursos sprockets')
-  var root = window;
-  msip_prepara_eventos_comunes(root, '/cor1440pdJ');
-  mr519_gen_prepara_eventos_comunes(root);
-  heb412_gen_prepara_eventos_comunes(root);
-  cor1440_gen_prepara_eventos_comunes(root);
+  msip_prepara_eventos_comunes(window, '/cor1440pdJ');
+  Mr519Gen__Motor.prepararEventosComunes(window);
+  heb412_gen_prepara_eventos_comunes(window);
+  cor1440_gen_prepara_eventos_comunes(window);
 
   Msip__Motor.ejecutarAlCargarDocumentoYRecursos()
   Mr519Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
@@ -100,7 +100,7 @@ document.addEventListener('turbo:load', (e) => {
 
   console.log('Escuchador turbo:load')
 
-  msip_ejecutarAlCargarPagina(window) // Establece root.puntoMontaje
+  msip_ejecutarAlCargarPagina(window) // Establece window.puntoMontaje
   Msip__Motor.ejecutarAlCargarPagina()
   Mr519Gen__Motor.ejecutarAlCargarPagina()
   Heb412Gen__Motor.ejecutarAlCargarPagina()

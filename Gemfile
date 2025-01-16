@@ -4,17 +4,11 @@ source "https://rubygems.org"
 
 gem "apexcharts"
 
-gem "babel-transpiler"
-
 gem "bcrypt"
 
-gem "bootsnap", ">=1.1.0", require: false
+gem "bootsnap", require: false
 
 gem "cancancan"
-
-gem "coffee-rails" # CoffeeScript para recuersos .js.coffee y vistas
-
-gem "cocoon", git: "https://github.com/vtamara/cocoon.git", branch: "new_id_with_ajax" # Formularios anidados (algunos con ajax)
 
 gem "devise" # Autenticación 
 
@@ -47,13 +41,13 @@ gem "prawn-table"
 
 gem "rack", "~> 2"
 
-gem "rails", ">= 7.1", "<7.2"
+gem "rails", "~> 7.2"
 
 gem "rails-i18n"
 
 gem "redcarpet"
 
-gem "rubyzip", ">=2.0.0"
+gem "rubyzip"
 
 gem "rspreadsheet"
 
@@ -65,7 +59,7 @@ gem "sprockets-rails"
 
 gem "stimulus-rails"
 
-gem "turbo-rails", "~> 1.0"
+gem "turbo-rails"
 
 gem "twitter_cldr" # ICU con CLDR
 
@@ -126,12 +120,6 @@ end
 
 
 group :test do
-  gem "cuprite"
-
-  gem "capybara"
-
-  gem "selenium-webdriver"
-
   gem "simplecov"
 
   gem "spring"

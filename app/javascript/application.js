@@ -8,9 +8,7 @@ if (typeof window.Rails == 'undefined') {
   window.Rails = Rails;
 }
 
-import "@hotwired/turbo-rails";
-
-import './jquery'
+import {Turbo} from "@hotwired/turbo-rails";
 
 import 'popper.js'              // Dialogos emergentes usados por bootstrap
 import * as bootstrap from 'bootstrap'              // Maquetacion y elementos de diseño
@@ -75,17 +73,13 @@ let promesaRecursosSprocketsYDocumento = new Promise((resolver, rechazar) => {
 
 promesaRecursosSprocketsYDocumento.then((mensaje) => {
   console.log('Cargando recursos sprockets')
-  Mr519Gen__Motor.prepararEventosComunes(window);
 
   Msip__Motor.ejecutarAlCargarDocumentoYRecursos()
   Mr519Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
   Heb412Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
   Cor1440Gen__Motor.ejecutarAlCargarDocumentoYRecursos()
 
-  formato_fecha = 'dd/M/yyyy'
-  if ($('meta[name=formato_fecha]').length != 0) {
-    formato_fecha = $('meta[name=formato_fecha]').attr('content')
-  }
+  window.formato_fecha = 'dd/M/yyyy'
 })
 
 

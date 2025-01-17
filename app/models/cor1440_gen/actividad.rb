@@ -30,13 +30,13 @@ module Cor1440Gen
     def horasvol
         case medduracion
         when 'I'
-          duracionvol/60.0
+          duracionvol.to_i/60.0
         when 'H'
-          duracionvol
+          duracionvol.to_i
         when 'D'
-          duracionvol*8
+          duracionvol.to_i*8
         when 'M'
-          duracionvol*8*25
+          duracionvol.to_i*8*25
         else
           0
         end

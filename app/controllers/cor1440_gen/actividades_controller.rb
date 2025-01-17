@@ -33,8 +33,8 @@ module Cor1440Gen
         a + [
           :orgsocial,
           :listadoasistencia,
-          :poblacion,
-          :anexos
+          #:poblacion,
+#          :anexos
         ]
       end
 

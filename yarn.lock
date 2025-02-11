@@ -306,9 +306,9 @@ popper.js@^2.0.0-next.4:
   integrity sha512-rwX+OiRozGJyNzo+b39WE1yh1VE7+FuDAbMIP1j3hUQN4DP0WEOEbRlHC7dDgoIDpBQSm5rr+nCoPktbQCNhFQ==
 
 postcss@^8.2.10:
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.1.tgz#e2272a1f8a807fafa413218245630b5db10a3214"
-  integrity sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.2.tgz#e7b99cb9d2ec3e8dd424002e7c16517cb2b846bd"
+  integrity sha512-MjOadfU3Ys9KYoX0AdkBlFEF1Vx37uCCeN4ZHnmwm9FfpbsGWMZeBLMmmpY+6Ocqod7mkdZ0DT31OlbsFrLlkA==
   dependencies:
     nanoid "^3.3.8"
     picocolors "^1.1.1"
@@ -380,9 +380,9 @@ svg.select.js@^3.0.1:
     svg.js "^2.6.5"
 
 tom-select@^2.3.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/tom-select/-/tom-select-2.4.1.tgz#6a0b6df8af3df7b09b22dd965eb75ce4d1c547bc"
-  integrity sha512-adI8H8+wk8RRzHYLQ3bXSk2Q+FAq/kzAATrcWlJ2fbIrEzb0VkwaXzKHTAlBwSJrhqbPJvhV/0eypFkED/nAug==
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/tom-select/-/tom-select-2.4.2.tgz#9764faf6cba51f6571d03a79bb7c1cac1cac7a5a"
+  integrity sha512-2RWjkL3gMDz9E+u8w+tQy9JWsYq8gaSytEVeugKYDeMus6ZtxT1HttLPnXsfHCnBPlsNubVyj5gtUeN+S+bcpA==
   dependencies:
     "@orchidjs/sifter" "^1.1.0"
     "@orchidjs/unicode-variants" "^1.1.2"

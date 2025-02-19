@@ -11,10 +11,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 8d640428388c36216ac60632c75d4c4e8e023e55
+  revision: 81a744c345a53298eb892322027796878cac78f5
   branch: main
   specs:
-    cor1440_gen (2.3.0.alfa3)
+    cor1440_gen (2.3.0.alfa4)
       devise
       heb412_gen
       kt-paperclip
@@ -24,10 +24,10 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: d82b04a63972b4c8fdeba696a9df926fedc45a13
+  revision: d8300f47c7132af22cc704b049d130e0e7c08311
   branch: main
   specs:
-    heb412_gen (2.3.0.alfa3)
+    heb412_gen (2.3.0.alfa4)
       mr519_gen
       msip
       redcarpet
@@ -35,19 +35,19 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 89074774cff7affc12ae309ea7528dd7dac07a28
+  revision: 7f86a9dab909fa9aeb8677fe49ce712d9c671cdd
   branch: main
   specs:
-    mr519_gen (2.3.0.alfa3)
+    mr519_gen (2.3.0.alfa4)
       msip
       rails
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 90af35902c9d86c4a52241d6cf25bf97d58a8fdd
+  revision: 294fbfdbe826628f45a17a1caadd3033c5a7f30b
   branch: main
   specs:
-    msip (2.3.0.alfa3)
+    msip (2.3.0.alfa4)
       cancancan (~> 3)
       devise (~> 4)
       devise-i18n (~> 1)
@@ -237,18 +237,18 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.2)
+    nokogiri (1.18.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.18.2-aarch64-linux-gnu)
+    nokogiri (1.18.3-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.2-arm-linux-gnu)
+    nokogiri (1.18.3-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.2-arm64-darwin)
+    nokogiri (1.18.3-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.2-x86_64-darwin)
+    nokogiri (1.18.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.2-x86_64-linux-gnu)
+    nokogiri (1.18.3-x86_64-linux-gnu)
       racc (~> 1.4)
     odf-report (0.8.1)
       mime-types
@@ -497,4 +497,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.6.3
+   2.6.4

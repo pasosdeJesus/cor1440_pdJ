@@ -1,18 +1,19 @@
-ENV['RAILS_ENV'] ||= 'test'
-require 'zeitwerk'
-require 'simplecov'
+# frozen_string_literal: true
+
+ENV["RAILS_ENV"] ||= "test"
+require "zeitwerk"
+require "simplecov"
 Zeitwerk::Loader.eager_load_all
-require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
+require File.expand_path("../../config/environment", __FILE__)
+require "rails/test_help"
 
 class ActiveSupport::TestCase
-
   protected
+
   def load_seeds
-    load "#{Rails.root}/db/seeds.rb"
+    load("#{Rails.root.join("db/seeds.rb")}")
   end
 end
-
 
 PRUEBA_ACTIVIDAD = {
   nombre: "n",
@@ -30,14 +31,12 @@ PRUEBA_ACTIVIDADPF = {
   resultadopf_id: 1,
 }
 
-
 PRUEBA_OBJETIVOPF = {
   id: 1,
   proyectofinanciero_id: 1,
   numero: "o",
   objetivo: "o",
 }
-
 
 PRUEBA_PROYECTOFINANCIERO = {
   id: 1,
@@ -65,7 +64,6 @@ PRUEBA_PROYECTOFINANCIERO = {
   presupuestototalej: 100,
 }
 
-
 PRUEBA_RESULTADOPF = {
   id: 1,
   proyectofinanciero_id: 1,
@@ -83,11 +81,9 @@ PRUEBA_USUARIO = {
   rol: 1,
   idioma: "es_CO",
   email: "usuario1@localhost",
-  encrypted_password: '$2a$10$uMAciEcJuUXDnpelfSH6He7BxW0yBeq6VMemlWc5xEl6NZRDYVA3G',
+  encrypted_password: "$2a$10$uMAciEcJuUXDnpelfSH6He7BxW0yBeq6VMemlWc5xEl6NZRDYVA3G",
   sign_in_count: 0,
   fechacreacion: "2014-08-05",
   fechadeshabilitacion: nil,
-  oficina_id: nil
+  oficina_id: nil,
 }
-
-

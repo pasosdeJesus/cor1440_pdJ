@@ -1,4 +1,6 @@
-require 'cor1440_gen/concerns/controllers/actividadtipos_controller'
+# frozen_string_literal: true
+
+require "cor1440_gen/concerns/controllers/actividadtipos_controller"
 
 module Cor1440Gen
   module Admin
@@ -8,15 +10,15 @@ module Cor1440Gen
 
       def atributos_index
         [
-          "id", 
-          "nombre", 
-          "observaciones", 
-          "porcentaje", 
+          "id",
+          "nombre",
+          "observaciones",
+          "porcentaje",
           "formulario",
-          "fechacreacion_localizada", 
-          "fechadeshabilitacion_localizada"]
+          "fechacreacion_localizada",
+          "fechadeshabilitacion_localizada",
+        ]
       end
-
     end
   end
 end

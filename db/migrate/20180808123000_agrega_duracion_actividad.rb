@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class AgregaDuracionActividad < ActiveRecord::Migration[5.2]
   def change
-    add_column :cor1440_gen_actividad, :duracion, :decimal
+    add_column(:cor1440_gen_actividad, :duracion, :decimal)
 
     # Valores posibles del siguiente en ApplicationHelper::DURACION
-    add_column :cor1440_gen_actividad, :medduracion, :char
+    add_column(:cor1440_gen_actividad, :medduracion, :char)
   end
 end

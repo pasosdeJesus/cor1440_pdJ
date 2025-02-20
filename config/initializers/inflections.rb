@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Be sure to restart your server when you modify this file.
 
 # Add new inflection rules using the following format. Inflections
@@ -16,8 +18,8 @@
 # end
 
 ActiveSupport::Inflector.inflections do |inflect|
-  inflect.irregular 'bloqueinfav', 'bloquesinfav'
-  inflect.irregular 'informeavanzado', 'informesavanzados'
-  inflect.irregular 'perfilorgsocial', 'perfilesorgsocial'
-  inflect.irregular 'sectororgsocial', 'sectoresorgsocial'
+  inflect.irregular("bloqueinfav", "bloquesinfav")
+  inflect.irregular("informeavanzado", "informesavanzados")
+  inflect.irregular("perfilorgsocial", "perfilesorgsocial")
+  inflect.irregular("sectororgsocial", "sectoresorgsocial")
 end

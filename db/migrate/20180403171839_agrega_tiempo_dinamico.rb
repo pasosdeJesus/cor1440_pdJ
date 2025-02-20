@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class AgregaTiempoDinamico < ActiveRecord::Migration[5.1]
   def up
-    execute <<-SQL
+    execute(<<-SQL)
       INSERT INTO cor1440_gen_proyectofinanciero (id, nombre, observaciones, fechainicio, fechacierre, responsable_id, fechacreacion, fechadeshabilitacion, created_at, updated_at, compromisos, monto, valorhora) VALUES (1, 'MARCO PASOS DE JESÚS', '', '2004-12-04', NULL, NULL, NULL, NULL, '2018-04-03 15:05:35.02528', '2018-04-03 15:10:33.722221', NULL, 0, NULL);
 
 

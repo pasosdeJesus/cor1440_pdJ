@@ -1,10 +1,12 @@
-require 'msip/version'
+# frozen_string_literal: true
+
+require "msip/version"
 
 Msip.setup do |config|
-  config.ruta_anexos = (ENV['MSIP_RUTA_ANEXOS'] ||
-                        "#{Rails.root}/archivos/anexos/")
-  config.ruta_volcados = (ENV['MSIP_RUTA_VOLCADOS'] ||
-                          "#{Rails.root}/archivos/bd/")
+  config.ruta_anexos = (ENV["MSIP_RUTA_ANEXOS"] ||
+                        "#{Rails.root.join("archivos/anexos/")}")
+  config.ruta_volcados = (ENV["MSIP_RUTA_VOLCADOS"] ||
+                          "#{Rails.root.join("archivos/bd/")}")
   config.titulo = "Cor1440 pdJ " + Cor1440Gen::VERSION
 
   config.descripcion = "Motor para seguimiento de actividades de Pasos de Jesús"

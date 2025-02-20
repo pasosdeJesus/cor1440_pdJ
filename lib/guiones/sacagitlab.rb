@@ -1,6 +1,8 @@
-#require 'byebug'
+# frozen_string_literal: true
 
-require 'net/http'
+# require 'byebug'
+
+require "net/http"
 
 proyecto_id = ARGV[0].to_i
 

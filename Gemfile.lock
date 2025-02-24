@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/cor1440_gen.git
-  revision: 46f8224659628910a0717954ae7c03c4adf25c0c
+  revision: c08abb9782a47b2351338c22334bfed91b65a9a8
   branch: main
   specs:
     cor1440_gen (2.3.0.alfa4)
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/heb412_gen.git
-  revision: d8300f47c7132af22cc704b049d130e0e7c08311
+  revision: 909fc0a7018da36c7edf3f1e433f75e49d529417
   branch: main
   specs:
     heb412_gen (2.3.0.alfa4)
@@ -35,7 +35,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/mr519_gen.git
-  revision: 7f86a9dab909fa9aeb8677fe49ce712d9c671cdd
+  revision: bbbd165f9cd5fca9c17656695c9e32d47b47c7fb
   branch: main
   specs:
     mr519_gen (2.3.0.alfa4)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://gitlab.com/pasosdeJesus/msip.git
-  revision: 0f74096680908e690dfa44469a333eab50f3d58e
+  revision: 87affe27de0eae4f8c0c3221f300007fe3850060
   branch: main
   specs:
     msip (2.3.0.alfa4)
@@ -370,7 +370,7 @@ GEM
       lint_roller (~> 1.1)
       rubocop (>= 1.72.1, < 2.0)
       rubocop-ast (>= 1.38.0, < 2.0)
-    rubocop-rails (2.30.1)
+    rubocop-rails (2.30.2)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
       rack (>= 1.1)
@@ -519,4 +519,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   2.6.4
+   2.6.5

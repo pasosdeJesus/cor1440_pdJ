@@ -12,6 +12,8 @@ gem "bootsnap", require: false
 
 gem "cancancan"
 
+gem "cssbundling-rails"
+
 gem "devise" # Autenticación
 
 gem "devise-i18n"
@@ -41,9 +43,11 @@ gem "prawnto_2", require: "prawnto"
 
 gem "prawn-table"
 
+gem "propshaft"
+
 gem "rack", "2.2.9"
 
-gem "rails", "~> 7.2"
+gem "rails", "~> 8.0"
 
 gem "rails-i18n"
 
@@ -53,11 +57,7 @@ gem "rubyzip"
 
 gem "rspreadsheet"
 
-gem "sassc-rails" # CSS
-
 gem "simple_form" # Formularios simples
-
-gem "sprockets-rails"
 
 gem "stimulus-rails"
 

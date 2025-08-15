@@ -53,7 +53,7 @@ gem "rails-i18n"
 
 gem "redcarpet"
 
-gem "rubyzip"
+gem "rubyzip", "<= 2.4.1"
 
 gem "rspreadsheet"
 
